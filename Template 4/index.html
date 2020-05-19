@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html data-sign="OSR">
+  <head>
+    <title>Template title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="css/minireset.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/placeholder-controller.css">
+
+    <style>
+      @import url('https://outfit-assets-production.s3.amazonaws.com/fonts/Circular/stylesheet.css');
+      @import url('https://outfit-assets-production.s3.amazonaws.com/fonts/lend-lease/stylesheet.css');
+
+      /* order inputs 
+
+      {{show-crop}}
+      {{placeholder-validation}}
+      {{ placeholder-opacity }}
+      {{ placeholder-toggle-new }}
+      {{ placeholder-image-1 }}  
+      {{LL_format-choice--t4n}}
+
+      {{theme-color}}
+      {{centre-choice}}
+      {{custom-logo}}
+      {{secondary-logo-size}}
+      {{{resposition-fix}}}
+      {{{headline}}}
+      {{{subheading}}}
+      {{{ body-copy-extended}}}
+      {{{LL_footer-text--t4n}}}
+      */
+
+      :root {
+        --scheme-1-a: {{{account.colors.corporate-a}}};
+        --scheme-1-b: {{{account.colors.corporate-b}}};
+        --scheme-1-c: {{{account.colors.corporate-c}}};
+        --scheme-1-d: {{{account.colors.corporate-d}}};
+        --scheme-1-e: {{{account.colors.corporate-e}}};
+        --scheme-1-f: {{{account.colors.corporate-f}}};
+        --scheme-1-g: {{{account.colors.corporate-g}}};
+
+
+        --scheme-2-a: {{{account.colors.scheme-2-a}}};
+        --scheme-2-b: {{{account.colors.scheme-2-b}}};
+        --scheme-2-c: {{{account.colors.scheme-2-c}}};
+        --scheme-2-d: {{{account.colors.scheme-2-d}}};
+        --scheme-2-e: {{{account.colors.scheme-2-e}}};
+        --scheme-2-f: {{{account.colors.scheme-2-f}}};
+
+
+        --scheme-3-a: {{{account.colors.scheme-3-a}}};	
+        --scheme-3-b: {{{account.colors.scheme-3-b}}};
+        --scheme-3-c: {{{account.colors.scheme-3-c}}};
+        --scheme-3-d: {{{account.colors.scheme-3-d}}};
+        --scheme-3-e: {{{account.colors.scheme-3-e}}};
+        --scheme-3-f: {{{account.colors.scheme-3-f}}};
+
+
+        --scheme-4-a: {{{account.colors.scheme-4-a}}};	
+        --scheme-4-b: {{{account.colors.scheme-4-b}}};
+        --scheme-4-c: {{{account.colors.scheme-4-c}}};
+        --scheme-4-d: {{{account.colors.scheme-4-d}}};
+        --scheme-4-e: {{{account.colors.scheme-4-e}}};
+        --scheme-4-f: {{{account.colors.scheme-4-f}}};
+
+        --scheme-5-a: {{{account.colors.scheme-5-a}}};	
+        --scheme-5-b: {{{account.colors.scheme-5-b}}};
+        --scheme-5-c: {{{account.colors.scheme-5-c}}};
+        --scheme-5-d: {{{account.colors.scheme-5-d}}};
+        --scheme-5-e: {{{account.colors.scheme-5-e}}};
+        --scheme-5-f: {{{account.colors.scheme-5-f}}};
+        --scheme-5-f: {{{account.colors.scheme-5-g}}};
+
+        --scheme-6-a: {{{account.colors.scheme-6-a}}};	
+        --scheme-6-b: {{{account.colors.scheme-6-b}}};
+        --scheme-6-c: {{{account.colors.scheme-6-c}}};
+        --scheme-6-d: {{{account.colors.scheme-6-d}}};
+        --scheme-6-e: {{{account.colors.scheme-6-e}}};
+        --scheme-6-f: {{{account.colors.scheme-6-f}}};
+
+        --scheme-7-a: {{{account.colors.scheme-7-a}}};	
+        --scheme-7-b: {{{account.colors.scheme-7-b}}};
+        --scheme-7-c: {{{account.colors.scheme-7-c}}};
+        --scheme-7-d: {{{account.colors.scheme-7-d}}};
+        --scheme-7-e: {{{account.colors.scheme-7-e}}};
+        --scheme-7-f: {{{account.colors.scheme-7-f}}};
+
+        --scheme-8-a: {{{account.colors.scheme-8-a}}};
+        --scheme-8-b: {{{account.colors.scheme-8-b}}};
+        --scheme-8-c: {{{account.colors.scheme-8-c}}};
+        --scheme-8-d: {{{account.colors.scheme-8-d}}};
+        --scheme-8-e: {{{account.colors.scheme-8-e}}};
+        --scheme-8-f: {{{account.colors.scheme-8-f}}};
+
+
+        --scheme-9-a: {{{account.colors.scheme-9-a}}};	
+        --scheme-9-b: {{{account.colors.scheme-9-b}}};
+        --scheme-9-c: {{{account.colors.scheme-9-c}}};
+        --scheme-9-d: {{{account.colors.scheme-9-d}}};
+        --scheme-9-e: {{{account.colors.scheme-9-e}}};
+        --scheme-9-f: {{{account.colors.scheme-9-f}}};
+
+
+        --dynamic-color-a: {{{account.colors.corporate-a}}};
+        --dynamic-color-b: {{{account.colors.corporate-b}}};
+        --dynamic-color-c: {{{account.colors.corporate-c}}};
+        --dynamic-color-d: {{{account.colors.corporate-d}}};
+        --dynamic-color-e: {{{account.colors.corporate-e}}};
+        --dynamic-color-f: {{{account.colors.corporate-f}}};
+        --dynamic-color-g: {{{account.colors.corporate-g}}};
+
+        --dynamic-gradient-1: linear-gradient(to bottom, var(--dynamic-color-a), var(--dynamic-color-b));
+        --dynamic-gradient-2: linear-gradient(to bottom, var(--dynamic-color-c), var(--dynamic-color-d));
+        --dynamic-gradient-3: linear-gradient(to bottom, var(--dynamic-color-e), var(--dynamic-color-f));
+
+        --heading-color: var(--dynamic-color-a);
+
+      }
+
+
+      [theme-color="scheme-1"] {
+        --dynamic-color-a: {{{account.colors.corporate-a}}};
+        --dynamic-color-b: {{{account.colors.corporate-b}}};
+        --dynamic-color-c: {{{account.colors.corporate-c}}};
+        --dynamic-color-d: {{{account.colors.corporate-d}}};
+        --dynamic-color-e: {{{account.colors.corporate-e}}};
+        --dynamic-color-f: {{{account.colors.corporate-f}}};
+        --dynamic-color-g: {{{account.colors.corporate-g}}};
+        --primary-logo : url('https://files.outfit.io/media_library_items/111795/lendlease_RestrictedUseLogo_ColourScheme_Corp_CMYK.svg');
+        --dynamic-gradient-1: linear-gradient(to bottom, var(--dynamic-color-a), var(--dynamic-color-b));
+        --dynamic-gradient: var(--dynamic-gradient-1);
+        --heading-color: var(--dynamic-color-a);
+      }
+
+      [theme-color="scheme-2"] {
+        --dynamic-color-a: {{{account.colors.scheme-2-a}}};
+        --dynamic-color-b: {{{account.colors.scheme-2-b}}};
+        --dynamic-color-c: {{{account.colors.scheme-2-c}}};
+        --dynamic-color-d: {{{account.colors.scheme-2-d}}};
+        --dynamic-color-e: {{{account.colors.scheme-2-e}}};
+        --dynamic-color-f: {{{account.colors.scheme-2-f}}};
+        --primary-logo : url('https://files.outfit.io/media_library_items/111796/lendlease_RestrictedUseLogo_ColourScheme02_CMYK.svg');
+        --dynamic-gradient-3: linear-gradient(to bottom, var(--dynamic-color-f), var(--dynamic-color-d));
+        --dynamic-gradient: var(--dynamic-gradient-3);
+        --heading-color: var(--dynamic-color-c);
+      }
+
+      [theme-color="scheme-3"] {
+        --dynamic-color-a: {{{account.colors.scheme-3-a}}};
+        --dynamic-color-b: {{{account.colors.scheme-3-b}}};
+        --dynamic-color-c: {{{account.colors.scheme-3-c}}};
+        --dynamic-color-d: {{{account.colors.scheme-3-d}}};
+        --dynamic-color-e: {{{account.colors.scheme-3-e}}};
+        --dynamic-color-f: {{{account.colors.scheme-3-f}}};
+        --primary-logo : url('https://files.outfit.io/media_library_items/111793/lendlease_RestrictedUseLogo_ColourScheme03_CMYK.svg');
+        --dynamic-gradient-1: linear-gradient(to bottom, var(--dynamic-color-c), var(--dynamic-color-e));
+        --dynamic-gradient: var(--dynamic-gradient-1);
+        --heading-color: var(--dynamic-color-e);
+      }
+
+      [theme-color="scheme-4"] {
+        --dynamic-color-a: {{{account.colors.scheme-4-a}}};
+        --dynamic-color-b: {{{account.colors.scheme-4-b}}};
+        --dynamic-color-c: {{{account.colors.scheme-4-c}}};
+        --dynamic-color-d: {{{account.colors.scheme-4-d}}};
+        --dynamic-color-e: {{{account.colors.scheme-4-e}}};
+        --dynamic-color-f: {{{account.colors.scheme-4-f}}};
+        --primary-logo : url('https://files.outfit.io/media_library_items/111794/lendlease_RestrictedUseLogo_ColourScheme04_CMYK.svg');
+        --dynamic-gradient-3: linear-gradient(to bottom, var(--dynamic-color-c), var(--dynamic-color-d));
+        --dynamic-gradient: var(--dynamic-gradient-3);
+        --heading-color: var(--dynamic-color-d);
+      }
+
+      [theme-color="scheme-5"] {
+        --dynamic-color-a: {{{account.colors.scheme-5-a}}};
+        --dynamic-color-b: {{{account.colors.scheme-5-b}}};
+        --dynamic-color-c: {{{account.colors.scheme-5-c}}};
+        --dynamic-color-d: {{{account.colors.scheme-5-d}}};
+        --dynamic-color-e: {{{account.colors.scheme-5-e}}};
+        --dynamic-color-f: {{{account.colors.scheme-5-f}}};
+        --dynamic-color-g: {{{account.colors.scheme-5-g}}};
+        --primary-logo : url('https://files.outfit.io/media_library_items/111798/lendlease_RestrictedUseLogo_ColourScheme05_CMYK.svg');
+        --dynamic-gradient-1: linear-gradient(to bottom, var(--dynamic-color-f), var(--dynamic-color-g));
+        --dynamic-gradient: var(--dynamic-gradient-1);
+        --heading-color: var(--dynamic-color-g);
+      }
+
+      [theme-color="scheme-6"] {
+        --dynamic-color-a: {{{account.colors.scheme-6-a}}};
+        --dynamic-color-b: {{{account.colors.scheme-6-b}}};
+        --dynamic-color-c: {{{account.colors.scheme-6-c}}};
+        --dynamic-color-d: {{{account.colors.scheme-6-d}}};
+        --dynamic-color-e: {{{account.colors.scheme-6-e}}};
+        --dynamic-color-f: {{{account.colors.scheme-6-f}}};
+        --primary-logo : url('https://files.outfit.io/media_library_items/111797/lendlease_RestrictedUseLogo_ColourScheme06_CMYK.svg');
+        --dynamic-gradient-1: linear-gradient(to bottom, var(--dynamic-color-c), var(--dynamic-color-e));
+        --dynamic-gradient: var(--dynamic-gradient-1);
+        --heading-color: var(--dynamic-color-e);
+      }
+
+      [theme-color="scheme-7"] {
+        --dynamic-color-a: {{{account.colors.scheme-7-a}}};
+        --dynamic-color-b: {{{account.colors.scheme-7-b}}};
+        --dynamic-color-c: {{{account.colors.scheme-7-c}}};
+        --dynamic-color-d: {{{account.colors.scheme-7-d}}};
+        --dynamic-color-e: {{{account.colors.scheme-7-e}}};
+        --dynamic-color-f: {{{account.colors.scheme-7-f}}};
+        --primary-logo : url('https://files.outfit.io/media_library_items/111799/lendlease_RestrictedUseLogo_ColourScheme07_CMYK.svg');
+        --dynamic-gradient-1: linear-gradient(to bottom, var(--dynamic-color-b), var(--dynamic-color-a));
+        --dynamic-gradient: var(--dynamic-gradient-1);
+        --heading-color: var(--dynamic-color-b);
+      }
+
+      [theme-color="scheme-8"] {
+        --dynamic-color-a: {{{account.colors.scheme-8-a}}};
+        --dynamic-color-b: {{{account.colors.scheme-8-b}}};
+        --dynamic-color-c: {{{account.colors.scheme-8-c}}};
+        --dynamic-color-d: {{{account.colors.scheme-8-d}}};
+        --dynamic-color-e: {{{account.colors.scheme-8-e}}};
+        --dynamic-color-f: {{{account.colors.scheme-8-f}}};
+        --primary-logo : url('https://files.outfit.io/media_library_items/111800/lendlease_RestrictedUseLogo_ColourScheme08_CMYK.svg');
+        --dynamic-gradient-1: linear-gradient(to bottom, var(--dynamic-color-b), var(--dynamic-color-a));
+        --dynamic-gradient: var(--dynamic-gradient-1);
+        --heading-color: var(--dynamic-color-a);
+      }
+
+      [theme-color="scheme-9"] {
+        --dynamic-color-a: {{{account.colors.scheme-9-a}}};
+        --dynamic-color-b: {{{account.colors.scheme-9-b}}};
+        --dynamic-color-c: {{{account.colors.scheme-9-c}}};
+        --dynamic-color-d: {{{account.colors.scheme-9-d}}};
+        --dynamic-color-e: {{{account.colors.scheme-9-e}}};
+        --dynamic-color-f: {{{account.colors.scheme-9-f}}};
+        --primary-logo : url('https://files.outfit.io/media_library_items/111801/lendlease_RestrictedUseLogo_ColourScheme09_CMYK.svg');
+        --dynamic-gradient-1: linear-gradient(to bottom, var(--dynamic-color-d), var(--dynamic-color-a));
+        --dynamic-gradient: var(--dynamic-gradient-1);
+        --heading-color: var(--dynamic-color-f);
+      }
+
+      {{{account.snippets.logos}}}
+
+      /*--- custom logo input ---*/ 
+      [centre-logo="custom-logo"] .logo--header {
+        background-image: url('{{{custom-logo}}}');
+      }
+
+
+      html {
+        font-family: "Circular";
+        word-break: break-word;
+      }
+
+      /* Helper classes */
+      .u-hide { display: none; }
+
+      /* Helper class for fixing Reposition tool bug */
+      .reposition-fix {
+        position: absolute;
+        overflow: hidden;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;        
+      }
+
+      .reposition-fix div {
+        top: 0 !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+      }
+
+      .fit {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .hero {
+        position: relative;
+      }
+
+      .formatChoice--a-format .hero {
+        height: 11.16rem;
+        margin-bottom: 0.28rem;
+      }
+      .formatChoice--5x8 .hero,
+      .formatChoice--8x11 .hero {  margin-bottom: 0.8rem; }
+      .formatChoice--5x8 .hero { height: 10.8rem; }
+      .formatChoice--8x11 .hero { height: 10.7rem; }
+      .formatChoice--11x17 .hero {
+        height: 12rem;
+        margin-bottom: 1rem;
+      }
+
+      .hero__image {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        overflow: hidden;
+      }
+
+      .formatChoice--a-format .hero__image { border-radius: 0 0 8.76rem 8.76rem/0 0 3.07rem 3.07rem; }
+      .formatChoice--5x8 .hero__image { border-radius: 0 0 7.6rem 7.6rem/0 0 1.9rem 1.9rem; }
+      .formatChoice--8x11 .hero__image,
+      .formatChoice--11x17 .hero__image {
+        border-radius: 0 0 7.6rem 7.6rem/0 0 2.7rem 2.7rem;
+      }
+
+      .logo--header {
+        position: absolute;
+        left: 1.38rem;
+        height: 1.25rem;
+        background-size: contain;
+        background-position: left top;
+        background-repeat: no-repeat;
+        transform-origin: top left;
+        background-image: var(--secondary-logo);
+      }
+
+      .formatChoice--a-format .logo--header {
+        top: 1.33rem;
+        width: 4.3rem;
+      }
+
+      .formatChoice--5x8 .logo--header {
+        top: 1.4rem;
+        width: 3.05rem;
+      }
+
+      .formatChoice--8x11 .logo--header {
+        top: 1rem;
+        left: 1.1rem;
+        width: 3.05rem;
+      }
+
+      .formatChoice--11x17 .logo--header {
+        top: 0.75rem;
+        left: 0.74rem;
+        width: 3rem;
+      }
+
+      .logo--main {
+        position: relative;
+        width: 3.67rem;
+        height: 100%;
+        margin-right: 0.43rem;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: var(--primary-logo);
+      }
+
+      .formatChoice--5x8 .logo--main { background-position: bottom right; }
+
+      .formatChoice--8x11 .logo--main {
+        width: 3.85rem;
+        background-position: bottom right;
+        margin-right:0;
+      }
+
+      .formatChoice--11x17 .logo--main {
+        width: 3.85rem;
+        background-position: bottom right;
+        margin-right:0;
+      }
+
+      .body {
+        display: flex;
+        flex: 1;
+      }
+
+      .formatChoice--a-format .body {
+        padding: 0 0.82rem 0 1.17rem;
+        margin-bottom: 0.54rem;
+      }
+
+      .formatChoice--5x8 .body {
+        padding: 0 0.3rem 0 1.4rem;
+        margin-bottom: 0.8rem;
+      }
+
+      .formatChoice--8x11 .body {
+        padding: 0 0.9rem 0 1.1rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .formatChoice--11x17 .body {
+        padding: 0 0.7rem 0 0.75rem;
+        margin-bottom: 0.98rem;
+      }
+
+      .content {
+        display: flex;
+        align-items: center;
+        flex: 1;
+      }
+
+      .formatChoice--5x8 .content { padding-right: 30pt;  }
+
+      .badge {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 0.49rem;
+        border-radius: 50%;
+        background: var(--dynamic-gradient);
+      }
+
+      .formatChoice--a-format .badge {
+        height: 99%;
+        width: 5.12rem;
+        padding: 0.82rem;
+      }
+
+      .formatChoice--5x8 .badge {
+        height: 73%;
+        width: 3.85rem;
+        padding: 0.6rem 0.45rem;
+      }
+
+      .formatChoice--8x11 .badge {
+        height: 99%;
+        width: 4.75rem;
+        padding: 1rem 0.5rem;
+      }
+
+      .formatChoice--11x17 .badge {
+        height: 91%;
+        width: 4.5rem;
+        padding: 1.2rem 0.3rem;
+      }
+
+      .formatChoice--a-format .badge + .copy__container { margin-left: 1.12rem; }
+      .formatChoice--5x8 .badge + .copy__container { margin-left: 0.6rem; }
+      .formatChoice--8x11 .badge + .copy__container { margin-left: 0.9rem; }
+      .formatChoice--11x17 .badge + .copy__container { margin-left: 0.6rem; }
+
+      .badge__text {
+        font-size: 0.70rem;
+        line-height: 1.1em;
+      }
+
+      .formatChoice--5x8 .badge__text,
+      .formatChoice--8x11 .badge__text{
+        line-height: 0.9em;
+      }
+
+      /* .badge__text--2line { display: none; }
+      .formatChoice--11x17 .badge__text--2line { 
+      display: block; 
+      line-height: 1.25em;
+      }
+      .formatChoice--11x17 .badge__text--4line { display: none; }*/
+
+      .badge__text h1 {
+        font-family: 'Pharma Condensed';
+        font-weight: bold;
+        text-align: center;
+        color: #fff;
+        letter-spacing: -0.02rem;
+        text-transform: uppercase;
+        width: 100%;
+      }
+
+      .formatChoice--a-format .badge__text h1 { font-size: 1em; }
+      .formatChoice--5x8 .badge__text h1 { font-size: 0.9em; }
+      .formatChoice--8x11 .badge__text h1 { font-size: 0.86em; }
+      .formatChoice--11x17 .badge__text h1 { font-size: 1.3em; }
+
+      .copy__container {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        height: 100%;
+        justify-content: center;
+        padding: 0.23rem 0;
+      }
+
+      .copyInner { font-size: 0.44rem; }
+
+      .formatChoice--a-format .copyInner {
+        max-height: 3.8rem;
+      }
+
+      .formatChoice--5x8 .copyInner {
+        max-height: 4.8rem;
+      }
+
+      .formatChoice--8x11 .copyInner {
+        max-height: 3.6rem;
+      }
+
+      .formatChoice--11x17 .copyInner {
+        max-height: 3.8rem;
+      }
+
+      .subheading { font-size: 1em; }
+
+      .formatChoice--a-format .subheading { font-size: 1em; line-height: 1.5em; }
+      .formatChoice--5x8 .subheading { font-size: 0.85em; }
+      .formatChoice--8x11 .subheading { font-size: 1.26em; }
+      .formatChoice--11x17 .subheading { font-size: 1.07em; }
+
+      .subheading h2 {
+        font-family: 'Pharma Condensed';
+        font-weight: bold;
+        font-size: 1em;
+        text-align: left;
+        color: var(--heading-color);
+        text-transform: uppercase;
+        line-height: 1em;
+      }
+
+      .formatChoice--a-format .subheading h2 {
+        line-height: 1.1em;
+      }
+
+      .copy {
+        font-family: 'Circular Std Book';
+        text-align: left;
+        color: #000;
+        line-height: 1.45em;
+        letter-spacing: 0.1px;
+      }
+
+      .formatChoice--a-format .copy  {
+        margin-top: 0.31rem;
+        font-size: 0.51em;
+        line-height: 1.5em;
+      }
+
+      .formatChoice--5x8 .copy {
+        margin-top: 0.31rem;
+        font-size: 0.65em;
+        line-height: 1.4em;
+      }
+
+      .formatChoice--8x11 .copy {
+        margin-top: 0.37rem;
+        font-size: 0.54em;
+        line-height: 1.4em;
+      }
+
+      .formatChoice--11x17 .copy {
+        margin-top: 0.25rem;
+        font-size: 0.57em;
+        line-height: 1.3em;
+      }
+
+      .copy p:last-child {
+        padding-top: 0.4em;
+      }
+
+      .footer {
+        display: flex;
+        border-top: 0.02rem solid darkgray;
+      }
+
+      .formatChoice--a-format .footer {
+        justify-content: flex-end;
+        height: 2.94rem;
+        padding: 0.79rem 0.82rem 1.45rem 1.17rem;
+      }
+
+      .formatChoice--5x8 .footer,
+      .formatChoice--8x11 .footer,
+      .formatChoice--11x17 .footer {
+        justify-content: space-between;
+      }
+
+      .formatChoice--5x8 .footer {
+        height: 2.65rem;
+        margin: 0 1rem;
+        padding: 0 0 1.37rem 0;
+      }
+
+      .formatChoice--8x11 .footer {
+        height: 2.46rem;
+        margin: 0 1.1rem;
+        padding: 0 0 1.05rem 0;
+      }
+
+      .formatChoice--11x17 .footer {
+        height: 1.84rem;
+        margin: 0 0.73rem;
+        padding: 0 0 0.7rem 0;
+      }
+
+      .info {
+        display: none;
+        flex-direction: column;
+        justify-content: flex-end;
+        margin-left: 0.4rem;
+        width: 6rem;
+        font-size: 0.365rem;
+        line-height: 1em;
+        font-weight: bold;
+        font-family: 'Pharma Condensed';
+      }
+
+      .formatChoice--5x8 .info,
+      .formatChoice--8x11 .info,
+      .formatChoice--11x17 .info {
+        display: flex;
+      }
+
+      .formatChoice--8x11 .info {
+        margin-left: 0;
+        font-size: 0.375rem;
+      }
+
+      .formatChoice--11x17 .info {
+        margin-left: 0;
+        font-size: 0.33rem;
+      }
+
+      .info__divider {
+        height: 1pt;
+        width: 15pt;
+        margin: 4pt 0;
+        font-size: 0;
+        border-bottom: 1pt solid black;
+      }
+
+      .formatChoice--11x17 .info__divider { margin: 5pt 0; }
+
+      .no-footer-text .info__divider { display: none; }
+
+      .badge__text.overflow:before,
+      .badge__text.overflow:after {
+        font-size: 0.6em;
+      }
+
+      .textFit--vert.overflow:hover:after{ content: 'Min font size exceeded'; }
+
+      /* ANY OTHER STYLES THAT NEED MUSTACHE.JS CAPABILITIES */
+    </style>
+  </head>
+  <body style="background: white" 
+        data-crop="{{show-crop}}" 
+        data-reduce-export-font-size-by-percent="0" 
+        data-reduce-firefox-font-size-by-percent="0" 
+        data-prevent-export-overflow="false"
+        theme-color="{{theme-color}}" centre-logo="{{centre-choice}}"
+        class="formatChoice--{{{LL_format-choice--t4n}}}
+               {{^LL_footer-text--t4n}}no-footer-text{{/LL_footer-text--t4n}}">
+    <div class="placeholderMaster" data-opacity="{{ placeholder-opacity }}">
+      <div class="placeholderMaster__item" data-bg="{{ placeholder-image-1 }}"></div>
+    </div><!-- end placeholderMaster -->
+    <div class="page">
+
+      <div class="bleed">
+
+        <div class="container fit">
+          <div class="hero">
+            <div class="hero__image">
+              <div class="reposition-fix">{{{ resposition-fix }}}</div><!--reposition-fix-->
+            </div><!--hero__image-->
+            <div class="logo logo--header" style="transform: scale({{{secondary-logo-size}}}{{^secondary-logo-size}}1{{/secondary-logo-size}})"></div><!--logo--header-->
+          </div><!--hero-->
+          <div class="body">
+            <div class="content">
+              {{#headline}}
+              <div class="badge">
+                <div class="badge__text textFit--vert">{{{ headline }}}</div><!--badge__text-->
+              </div><!--badge-->
+              {{/headline}}
+              <div class="copy__container">
+                <div class="copyInner" data-max-height="css">
+                  <div class="subheading">{{{ subheading }}}</div><!--subheading-->
+                  <div class="copy">{{{ body-copy-extended }}}</div><!--copy-->
+                </div><!--copyInner-->
+              </div><!--copy__container-->
+            </div><!--content-->
+          </div><!--body-->
+          <div class="footer">
+            <div class="info">
+              {{#LL_footer-text--t4n}}
+              <div class="info__text info__text--regularInput" data-max-line="1">{{{LL_footer-text--t4n}}}</div><!--info__text--regularInput-->
+              {{/LL_footer-text--t4n}}
+              <div class="info__divider">-</div><!--info__divider-->
+              <div class="info__text info__text--smartInput" data-max-line="1">{{{team.website}}} {{{team.phone}}}</div><!--info__text--smartInput-->
+            </div><!--info-->
+            <div class="logo logo--main"></div><!--logo--main-->
+          </div><!--footer-->
+        </div><!--container fit-->
+
+      </div><!--bleed-->
+
+    </div><!--page-->
+
+
+    <script>
+      window.showCrop = {{show-crop}}{{^show-crop}}true{{/show-crop}};
+    </script>
+    <script src="js/main.js"></script>   
+    <script src="js/prefixfree.js"></script>
+    <script src="js/placeholder-controller.js"></script>
+    <script src="js/char-limit.js"></script>
+    <script src="js/check-export-mode.js"></script>
+    <script src="js/max-line-check.js"></script>
+    <script src="js/max-height-check.js"></script>
+    <script src="js/hide-empty-titles.js"></script>
+    <script src="js/custom-rich-text.js"></script>
+    <script src="js/dynamic-inject.js"></script>
+    <script src="js/text-fit-min.js"></script>
+    <script src="js/fontfaceobserver.js"></script>
+    <script src="https://outfit-assets-production.s3-accelerate.amazonaws.com/scripts/textfit.0.0.4.min.js" type="text/javascript"></script>
+    <script>
+      {{ #placeholder-toggle-new }}document.body.classList.add("u-placeholder-{{ placeholder-toggle-new }}{{^placeholder-toggle-new}}hide{{/placeholder-toggle-new}}"); {{ /placeholder-toggle-new }}
+      {{ #placeholder-validation }}document.body.classList.add("placeholder__validation--{{placeholder-validation}}"){{ /placeholder-validation }}
+    </script>
+    <script>
+
+      console.clear();
+
+      // Tracking text changes and firing text restriction functions (mutationObserver)
+      const overflowObserver = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+          maxLineCheck();
+          maxHeightCheck();
+          charLimit();
+          hideEmptyTitles();
+        });
+      });
+
+      const injectObserver = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+          injectDynamicContent();
+        });
+      });      
+
+      const injectSources = document.querySelectorAll('[data-target-id]');
+
+      overflowObserver.observe(document.body, {
+        attributes: false,
+        characterData: true,
+        childList: true,
+        subtree: true,
+        attributeOldValue: false,
+        characterDataOldValue: true
+      });
+
+      if ( injectSources.length > 0 ) {
+        injectSources.forEach(src => {
+          injectObserver.observe(src, {
+            attributes: false,
+            characterData: true,
+            childList: true,
+            subtree: true,
+            attributeOldValue: false,
+            characterDataOldValue: true
+          });            
+        });
+      }    
+
+      // Calling text size restriction functions once the fonts are loaded
+      // All external font-families need to be added to 'fonts' array
+      document.addEventListener('DOMContentLoaded', function(event) {
+        const fonts = ['Circular','Pharma Condensed','Circular Std Book'];
+        const fontObservers = [];
+
+        fonts.forEach(font => {
+          const obs = new FontFaceObserver(font);
+          fontObservers.push(obs.load())
+        });
+
+        Promise.all(fontObservers).then(() => {
+          maxLineCheck();
+          maxHeightCheck();
+          injectDynamicContent();
+          hideEmptyTitles();
+          TextFit.fit({
+            selector: '.textFit--vert',
+            fitMode: 'vertical'
+          });
+
+          document.dispatchEvent(new Event('printready'));
+        });
+      });      
+
+      placeholderController();
+      checkCrop();
+      checkExport();
+      charLimit();
+
+      // TextFit function decreases the font of the selected element to make it fit in single line (if needed, uncomment the code bellow)
+
+      setInterval(() => {textFitMin('.textFit--vert', 24)}, 500);
+
+
+    </script>
+
+
+  </body>
+</html>
