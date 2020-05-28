@@ -231,8 +231,10 @@
         width: 100%;
         background-position: center;
       }
-      [centre-logo="custom-logo"] .logo--support {
+      [centre-logo="custom-logo"] .logo--support {        
+        width: calc(2.59rem * {{{secondary-logo-size}}}{{^secondary-logo-size}}1{{/secondary-logo-size}});
         background-image: url('{{{LL_custom-logo--t2}}}');
+        background-size: contain;
       }
 
       /* Helper classes */
@@ -668,7 +670,7 @@
           <div class="header header--frontPage">
             <div class="subjectText subjectText--frontPage" data-max-line="1">{{{LL_subject-text--t2}}}</div><!--subjectText-->
             <div class="logo__container">
-              <div class="logo logo--support" style="transform: scale({{{secondary-logo-size}}}{{^secondary-logo-size}}1{{/secondary-logo-size}})"></div><!--logo--support-->
+              <div class="logo logo--support"></div><!--logo--support-->
               <div class="logo logo--main"></div><!--logo--main-->
             </div><!--logo__container-->
           </div><!--header-->
