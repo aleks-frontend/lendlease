@@ -1,0 +1,1569 @@
+<!DOCTYPE html>
+<html data-sign="OSM">
+  <head>
+    <title>Template title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="css/minireset.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/placeholder-controller.css">
+
+    <style>
+      /* Inputs Order
+      {{show-crop}}
+      {{placeholder-validation}}
+      {{ placeholder-opacity }}
+      {{ placeholder-toggle-new }}
+      {{ placeholder-image }} 
+      {{{LL_theme--t7}}}
+      {{{LL_format--t7}}}
+      {{{LL_layout--t7}}}
+      {{LL_variation-choice--t7}}
+      {{{LL_theme-colour--t7}}}
+      {{LL_colour-selection--t7}}
+      {{{LL_background-image--t7}}}
+      {{{LL_hero-image--t7}}}
+      {{{LL_headline--t7}}}
+      {{{LL_body-content-1--t7}}}
+      {{{LL_body-content-2--t7}}}
+      {{{LL_body-content-3--t7}}}
+      {{LL_body-content-text-size-slider-abuzz--t7}}
+      {{LL_body-content-text-size-slider-landscape-digital-board--t7}}
+      {{LL_body-content-text-size-slider-portrait-digital-board--t7}}
+      {{LL_body-content-text-size-slider-poster-30x40--t7}}
+      {{LL_body-content-text-size-slider-poster-a4--t7}}
+      {{LL_body-content-text-size-slider-poster-a5--t7}}
+      {{LL_body-content-text-size-slider-poster-a3--t7}}
+      {{LL_body-content-text-size-slider-poster-edm-half-image--t7}}
+      {{LL_body-content-text-size-slider-poster-edm-full-image--t7}}
+      {{{centre-choice}}}
+      {{logo-style}}
+      {{{LL_main-logo-position--t7}}}
+      {{{custom-logo}}}
+      {{{secondary-logo-size}}}
+      {{{LL_call-out-text--t7}}}
+      {{{LL_call-out-theme--t7}}}
+      */
+
+      @import url('https://outfit-assets-production.s3.amazonaws.com/fonts/Circular/stylesheet.css');
+
+      :root {
+        --white: #fff;
+        --black: #000;
+        --grey: #ccc;
+
+        --scheme-1-a: {{{account.colors.corporate-a}}};
+        --scheme-1-b: {{{account.colors.corporate-b}}};
+        --scheme-1-c: {{{account.colors.corporate-c}}};
+        --scheme-1-d: {{{account.colors.corporate-d}}};
+        --scheme-1-e: {{{account.colors.corporate-e}}};
+        --scheme-1-f: {{{account.colors.corporate-f}}};
+        --scheme-1-g: {{{account.colors.corporate-g}}};
+
+        --scheme-2-a: {{{account.colors.scheme-2-a}}};
+        --scheme-2-b: {{{account.colors.scheme-2-b}}};
+        --scheme-2-c: {{{account.colors.scheme-2-c}}};
+        --scheme-2-d: {{{account.colors.scheme-2-d}}};
+        --scheme-2-e: {{{account.colors.scheme-2-e}}};
+        --scheme-2-f: {{{account.colors.scheme-2-f}}};
+
+        --scheme-3-a: {{{account.colors.scheme-3-a}}};	
+        --scheme-3-b: {{{account.colors.scheme-3-b}}};
+        --scheme-3-c: {{{account.colors.scheme-3-c}}};
+        --scheme-3-d: {{{account.colors.scheme-3-d}}};
+        --scheme-3-e: {{{account.colors.scheme-3-e}}};
+        --scheme-3-f: {{{account.colors.scheme-3-f}}};
+
+        --scheme-4-a: {{{account.colors.scheme-4-a}}};	
+        --scheme-4-b: {{{account.colors.scheme-4-b}}};
+        --scheme-4-c: {{{account.colors.scheme-4-c}}};
+        --scheme-4-d: {{{account.colors.scheme-4-d}}};
+        --scheme-4-e: {{{account.colors.scheme-4-e}}};
+        --scheme-4-f: {{{account.colors.scheme-4-f}}};
+
+        --scheme-5-a: {{{account.colors.scheme-5-a}}};	
+        --scheme-5-b: {{{account.colors.scheme-5-b}}};
+        --scheme-5-c: {{{account.colors.scheme-5-c}}};
+        --scheme-5-d: {{{account.colors.scheme-5-d}}};
+        --scheme-5-e: {{{account.colors.scheme-5-e}}};
+        --scheme-5-f: {{{account.colors.scheme-5-f}}};
+
+        --scheme-6-a: {{{account.colors.scheme-6-a}}};	
+        --scheme-6-b: {{{account.colors.scheme-6-b}}};
+        --scheme-6-c: {{{account.colors.scheme-6-c}}};
+        --scheme-6-d: {{{account.colors.scheme-6-d}}};
+        --scheme-6-e: {{{account.colors.scheme-6-e}}};
+        --scheme-6-f: {{{account.colors.scheme-6-f}}};
+
+        --scheme-7-a: {{{account.colors.scheme-7-a}}};	
+        --scheme-7-b: {{{account.colors.scheme-7-b}}};
+        --scheme-7-c: {{{account.colors.scheme-7-c}}};
+        --scheme-7-d: {{{account.colors.scheme-7-d}}};
+        --scheme-7-e: {{{account.colors.scheme-7-e}}};
+        --scheme-7-f: {{{account.colors.scheme-7-f}}};
+
+        --scheme-8-a: {{{account.colors.scheme-8-a}}};
+        --scheme-8-b: {{{account.colors.scheme-8-b}}};
+        --scheme-8-c: {{{account.colors.scheme-8-c}}};
+        --scheme-8-d: {{{account.colors.scheme-8-d}}};
+        --scheme-8-e: {{{account.colors.scheme-8-e}}};
+        --scheme-8-f: {{{account.colors.scheme-8-f}}};
+
+        --scheme-9-a: {{{account.colors.scheme-9-a}}};	
+        --scheme-9-b: {{{account.colors.scheme-9-b}}};
+        --scheme-9-c: {{{account.colors.scheme-9-c}}};
+        --scheme-9-d: {{{account.colors.scheme-9-d}}};
+        --scheme-9-e: {{{account.colors.scheme-9-e}}};
+        --scheme-9-f: {{{account.colors.scheme-9-f}}};
+
+        --dynamic-color-a: {{{account.colors.corporate-a}}};
+        --dynamic-color-b: {{{account.colors.corporate-b}}};
+        --dynamic-color-c: {{{account.colors.corporate-c}}};
+        --dynamic-color-d: {{{account.colors.corporate-d}}};
+        --dynamic-color-e: {{{account.colors.corporate-e}}};
+        --dynamic-color-f: {{{account.colors.corporate-f}}};
+        --dynamic-color-g: {{{account.colors.corporate-g}}};
+
+        --dynamic-gradient-1: linear-gradient(var(--dynamic-color-a), var(--dynamic-color-b));
+        --dynamic-gradient-2: linear-gradient(var(--dynamic-color-c), var(--dynamic-color-d));
+        --dynamic-gradient-3: linear-gradient(var(--dynamic-color-e), var(--dynamic-color-f));
+
+        --secondary-logo: url('https://files.outfit.io/media_library_items/111647/Erina%2520Fair%2520Logo%2520REVERSE.png');
+        --primary-logo : url('https://files.outfit.io/media_library_items/111648/lendlease_RestrictedUseLogo_Mono_REV.png');
+
+        --shape-color: var(--dynamic-color-d);
+      }
+
+      {{{account.snippets.logos}}}
+
+      [centre-logo="no-centre"] .logo--partner {
+        display: none;
+      }
+      [centre-logo="no-centre"] .logo--main {
+        width: 100%;
+        background-position: center;
+      }
+
+      /*--- custom logo input ---*/ 
+      [centre-logo="custom-logo"] .logo--partner{
+        background-image: url('{{{custom-logo}}}');
+      }
+
+      .themeColour--scheme-1 {
+        --dynamic-color-a: {{{account.colors.corporate-a}}};
+        --dynamic-color-b: {{{account.colors.corporate-b}}};
+        --dynamic-color-c: {{{account.colors.corporate-c}}};
+        --dynamic-color-d: {{{account.colors.corporate-d}}};
+        --dynamic-color-e: {{{account.colors.corporate-e}}};
+        --dynamic-color-f: {{{account.colors.corporate-f}}};
+        --dynamic-color-g: {{{account.colors.corporate-g}}};
+        --primary-logo : url('https://files.outfit.io/media_library_items/111795/lendlease_RestrictedUseLogo_ColourScheme_Corp_CMYK.svg');
+      }
+
+      .themeColour--scheme-2 {
+        --dynamic-color-a: {{{account.colors.scheme-2-a}}};
+        --dynamic-color-b: {{{account.colors.scheme-2-b}}};
+        --dynamic-color-c: {{{account.colors.scheme-2-c}}};
+        --dynamic-color-d: {{{account.colors.scheme-2-d}}};
+        --dynamic-color-e: {{{account.colors.scheme-2-e}}};
+        --dynamic-color-f: {{{account.colors.scheme-2-f}}};
+        --primary-logo : url('https://files.outfit.io/media_library_items/111796/lendlease_RestrictedUseLogo_ColourScheme02_CMYK.svg');
+      }
+
+      .themeColour--scheme-3 {
+        --dynamic-color-a: {{{account.colors.scheme-3-a}}};
+        --dynamic-color-b: {{{account.colors.scheme-3-b}}};
+        --dynamic-color-c: {{{account.colors.scheme-3-c}}};
+        --dynamic-color-d: {{{account.colors.scheme-3-d}}};
+        --dynamic-color-e: {{{account.colors.scheme-3-e}}};
+        --dynamic-color-f: {{{account.colors.scheme-3-f}}};
+        --primary-logo : url('https://files.outfit.io/media_library_items/111793/lendlease_RestrictedUseLogo_ColourScheme03_CMYK.svg');
+      }
+
+      .themeColour--scheme-4 {
+        --dynamic-color-a: {{{account.colors.scheme-4-a}}};
+        --dynamic-color-b: {{{account.colors.scheme-4-b}}};
+        --dynamic-color-c: {{{account.colors.scheme-4-c}}};
+        --dynamic-color-d: {{{account.colors.scheme-4-d}}};
+        --dynamic-color-e: {{{account.colors.scheme-4-e}}};
+        --dynamic-color-f: {{{account.colors.scheme-4-a}}};
+        --primary-logo : url('https://files.outfit.io/media_library_items/111794/lendlease_RestrictedUseLogo_ColourScheme04_CMYK.svg');
+      }
+
+      .themeColour--scheme-5 {
+        --dynamic-color-a: {{{account.colors.scheme-5-a}}};
+        --dynamic-color-b: {{{account.colors.scheme-5-b}}};
+        --dynamic-color-c: {{{account.colors.scheme-5-c}}};
+        --dynamic-color-d: {{{account.colors.scheme-5-d}}};
+        --dynamic-color-e: {{{account.colors.scheme-5-e}}};
+        --dynamic-color-f: {{{account.colors.scheme-5-f}}};
+        --primary-logo : url('https://files.outfit.io/media_library_items/111798/lendlease_RestrictedUseLogo_ColourScheme05_CMYK.svg');
+      }
+
+      .themeColour--scheme-6 {
+        --dynamic-color-a: {{{account.colors.scheme-6-a}}};
+        --dynamic-color-b: {{{account.colors.scheme-6-b}}};
+        --dynamic-color-c: {{{account.colors.scheme-6-c}}};
+        --dynamic-color-d: {{{account.colors.scheme-6-d}}};
+        --dynamic-color-e: {{{account.colors.scheme-6-e}}};
+        --dynamic-color-f: {{{account.colors.scheme-6-f}}};
+        --primary-logo : url('https://files.outfit.io/media_library_items/111797/lendlease_RestrictedUseLogo_ColourScheme06_CMYK.svg');
+      }
+
+      .themeColour--scheme-7 {
+        --dynamic-color-a: {{{account.colors.scheme-7-a}}};
+        --dynamic-color-b: {{{account.colors.scheme-7-b}}};
+        --dynamic-color-c: {{{account.colors.scheme-7-c}}};
+        --dynamic-color-d: {{{account.colors.scheme-7-d}}};
+        --dynamic-color-e: {{{account.colors.scheme-7-e}}};
+        --dynamic-color-f: {{{account.colors.scheme-7-f}}};
+        --primary-logo : url('https://files.outfit.io/media_library_items/111799/lendlease_RestrictedUseLogo_ColourScheme07_CMYK.svg');
+      }
+
+      .themeColour--scheme-8 {
+        --dynamic-color-a: {{{account.colors.scheme-8-a}}};
+        --dynamic-color-b: {{{account.colors.scheme-8-b}}};
+        --dynamic-color-c: {{{account.colors.scheme-8-c}}};
+        --dynamic-color-d: {{{account.colors.scheme-8-d}}};
+        --dynamic-color-e: {{{account.colors.scheme-8-e}}};
+        --dynamic-color-f: {{{account.colors.scheme-8-f}}};
+        --primary-logo : url('https://files.outfit.io/media_library_items/111800/lendlease_RestrictedUseLogo_ColourScheme08_CMYK.svg');
+      }
+
+      .themeColour--scheme-9 {
+        --dynamic-color-a: {{{account.colors.scheme-9-a}}};
+        --dynamic-color-b: {{{account.colors.scheme-9-b}}};
+        --dynamic-color-c: {{{account.colors.scheme-9-c}}};
+        --dynamic-color-d: {{{account.colors.scheme-9-d}}};
+        --dynamic-color-e: {{{account.colors.scheme-9-e}}};
+        --dynamic-color-f: {{{account.colors.scheme-9-f}}};
+        --primary-logo : url('https://files.outfit.io/media_library_items/111801/lendlease_RestrictedUseLogo_ColourScheme09_CMYK.svg');
+      }
+
+      html {
+        font-family: 'Circular';
+        font-size: 11pt;
+        color: #000;
+        word-break: break-word;
+      }
+
+      .backgroundImage {
+        display: none;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        overflow: hidden;
+      }
+
+      .backgroundImage div {
+        width: auto !important;
+        height: auto !important;
+        right: 0;
+        bottom: 0;
+      }
+
+      /* Helper classes */
+      .u-hide { display: none; }
+
+      /* Helper class for fixing Reposition tool bug */
+      .reposition-fix {
+        position: absolute;
+        overflow: hidden;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;        
+      }
+
+      .reposition-fix div {
+        top: 0 !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+      }
+      .tinymce_style--dark { color: var(--black); }
+      .tinymce_style--light {color: var(--white); }
+
+      .theme--full-img .backgroundImage,
+      .theme--full-img-h .backgroundImage,
+      .theme--full-img-h-c .backgroundImage,
+      .theme--full-img-h-cta-landscape .backgroundImage,
+      .theme--full-img-h-cta-portrait .backgroundImage {
+        display: block;
+      }
+
+      .fit {
+        display: flex;
+        background-color: var(--dynamic-{{LL_colour-selection--t7}});
+      }
+
+      .layout--border .fit { background: var(--white); }
+
+      .theme--full-img-h .fit { 
+        flex-direction: column;
+        align-items: flex-end;
+        padding: 98pt 39pt 85pt 245pt;
+      }
+
+      .theme--full-img-h-c .fit {
+        flex-direction: column;
+        align-items: flex-end;
+      }
+      .theme--full-img-h-c.format--1400x650 .fit { padding: 152.7pt 106.1pt 62pt 640pt; }
+      .theme--full-img-h-c.format--1200x500 .fit { padding: 32.7pt 46.1pt 32.7pt 553pt; }
+      .theme--full-img-h-cta-portrait .fit { padding: 753pt 55pt 375pt 55pt; }
+
+      .theme--full-img-h-cta-landscape.format--1920x1080 .fit {
+        padding: 65pt 59pt 347pt 779pt;
+        flex-direction: column;
+      }
+
+      .theme--full-img-h-cta-landscape.format--820x312 .fit { padding: 30pt 114pt 118pt 339pt; }
+
+      .theme--half-img-h .fit { padding: 23.6pt; }
+
+      .theme--half-img-h-cta-portrait .fit { 
+        flex-direction: column;
+        padding: 53.4pt 53.4pt 375pt;
+      }
+      .layout--border.theme--half-img-h-cta-portrait .fit { padding-bottom: 53.4pt; }
+
+      .theme--half-img-h-c.format--1200x500 .fit { padding: 31pt 31pt 31pt 31pt; }
+      .theme--half-img-h-c.format--1400x650 .fit { padding: 128pt 50pt 50pt 110pt; }
+      .theme--half-img-h-cta-landscape.format--1920x1080 .fit { padding: 46pt; }
+      .theme--half-img-h-cta-landscape.format--820x312 .fit { padding: 23.8pt; }
+      .theme--half-img-h-c-cta-f-portrait .fit { flex-direction: column; }
+      .theme--half-img-h-c-cta-f-portrait.format--297x420 .fit { padding: 53pt; }
+      .layout--border.theme--half-img-h-c-cta-f-portrait.format--297x420 .fit { padding: 38pt; }
+      .theme--half-img-h-c-cta-f-portrait.format--210x297 .fit { padding: 32pt; }
+      .theme--half-img-h-c-cta-f-portrait.format--148x210 .fit { padding: 29pt; }
+      .theme--half-img-h-c-cta-f-portrait.format--762x1016 .fit { padding: 125pt; }
+      .theme--half-img-h-c-cta-f-portrait.format--1080x1920 .fit { padding: 47pt; }
+      .theme--half-img-h-c-cta-f-portrait.format--1080x1510 .fit { padding: 54pt 54pt 39pt 54pt; }
+      .theme--half-img-h-c-cta-f-landscape .fit { padding: 38pt; }
+      /* 5.5x8 */
+      .theme--half-img-h-c-cta-f-portrait.format--5x8 .fit { padding-bottom: 27pt; }
+      .layout--border.theme--half-img-h-c-cta-f-portrait.format--5x8 .fit { padding: 27pt; }
+      /* 8x11 */
+      .theme--half-img-h-c-cta-f-portrait.format--8x11 .fit { padding-bottom: 43pt; }
+      .layout--border.theme--half-img-h-c-cta-f-portrait.format--8x11 .fit { padding: 27pt 27pt 43pt; }
+      /* 11x17 */
+      .theme--half-img-h-c-cta-f-portrait.format--11x17 .fit { padding-bottom: 41pt; }
+      .layout--border.theme--half-img-h-c-cta-f-portrait.format--11x17 .fit { padding: 44pt 44pt 41pt; }
+
+      .theme--half-img-h-c-cta-f-portrait.format--5x8 .fit,
+      .layout--border.theme--half-img-h-c-cta-f-portrait.format--8x11 .fit,
+      .layout--border.theme--half-img-h-c-cta-f-portrait.format--11x17 .fit {
+        background-color: var(--dynamic-{{LL_colour-selection--t7}});
+      }
+
+      .hero__container { display: none; }
+
+      .theme--half-img-h .hero__container {
+        display: block;
+        width: 224.8pt;
+      }
+      .theme--half-img-h-cta-portrait .hero__container {
+        display: block;
+        height: 676pt;
+      }
+      .theme--half-img-h-c .hero__container { display: block; }
+      .theme--half-img-h-c.format--1200x500 .hero__container { width: 427.3pt; }
+      .theme--half-img-h-c.format--1400x650 .hero__container { width: 510.3pt; }
+      .theme--half-img-h-cta-landscape .hero__container { display: block; }
+      .theme--half-img-h-cta-landscape.format--1920x1080 .hero__container { width: 684pt; }
+      .theme--half-img-h-cta-landscape.format--820x312 .hero__container { width: 292pt; }
+      .theme--half-img-h-c-cta-f-portrait .hero__container {
+        display: block;
+        width: 100%; 
+      }
+      .theme--half-img-h-c-cta-f-portrait.format--297x420 .hero__container { height: 708pt; }
+      .layout--border.theme--half-img-h-c-cta-f-portrait.format--297x420 .hero__container { height: 723pt; }
+      .theme--half-img-h-c-cta-f-portrait.format--210x297 .hero__container { height: 500pt }
+      .theme--half-img-h-c-cta-f-portrait.format--148x210 .hero__container {height: 333pt; }
+      .theme--half-img-h-c-cta-f-portrait.format--762x1016 .hero__container { height: 1698pt; }
+      .layout--border.theme--half-img-h-c-cta-f-portrait.format--762x1016 .hero__container { height: 1641pt; }
+      .theme--half-img-h-c-cta-f-portrait.format--1080x1920 .hero__container { height: 846pt; }
+      .theme--half-img-h-c-cta-f-portrait.format--1080x1510 .hero__container { height: 669pt; }
+      .theme--half-img-h-c-cta-f-landscape .hero__container {
+        display: block;
+        width: 451pt;
+      }
+      /* 5.5x8 */
+      .theme--half-img-h-c-cta-f-portrait.format--5x8 .hero__container {height: 386.5pt; }
+      .layout--border.theme--half-img-h-c-cta-f-portrait.format--5x8 .hero__container {height: 359.5pt; }
+      /* 8x11 */
+      .theme--half-img-h-c-cta-f-portrait.format--8x11 .hero__container { height: 458pt; }
+      .layout--border.theme--half-img-h-c-cta-f-portrait.format--8x11 .hero__container { height: 432pt; }
+      /* 11x17 */
+      .theme--half-img-h-c-cta-f-portrait.format--11x17 .hero__container { height: 765pt; }
+      .layout--border.theme--half-img-h-c-cta-f-portrait.format--11x17 .hero__container { height: 721pt; }
+
+      .hero {
+        position: relative;
+        height: 100%;
+      }
+
+      .cta__container {
+        display: none;
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+        border: 6pt solid var(--white);
+        border-radius: 100%;
+        transform: rotate(-21deg);
+      }
+
+      .theme--half-img-h-c-cta-f-landscape .cta__container--primary {
+        display: flex;
+        width: 144pt;
+        height: 144pt;
+        top: 59pt;
+        left: 64pt;
+        padding: 12pt 16pt;
+        border-width: 4pt;
+      }
+
+      .theme--half-img-h-c-cta-f-portrait.format--297x420 .cta__container--primary {
+        display: flex;
+        top: 80pt;
+        left: 79pt;
+        width: 174pt;
+        height: 174pt;
+        padding: 20pt;
+        border-width: 3.6pt;
+      }
+
+      .theme--half-img-h-c-cta-f-portrait.format--210x297 .cta__container--primary {
+        display: flex;
+        top: 49pt;
+        left: 47pt;
+        width: 124pt;
+        height: 124pt;
+        padding: 12pt;
+        border-width: 2.9pt;
+      }
+
+      .theme--half-img-h-c-cta-f-portrait.format--148x210 .cta__container--primary {    
+        display: flex;
+        top: 43pt;
+        left: 42pt;
+        width: 86pt;
+        height: 86pt;
+        padding: 12pt;
+        border-width: 2.4pt;
+      }
+
+      .theme--half-img-h-c-cta-f-portrait.format--762x1016 .cta__container--primary {
+        display: flex;
+        top: 193pt;
+        left: 193pt;
+        width: 489pt;
+        height: 489pt;
+        padding: 61pt 61pt 70pt;
+        border-width: 9.4pt;
+      }
+
+      .theme--half-img-h-c-cta-f-portrait.format--1080x1920 .cta__container--primary,
+      .theme--half-img-h-c-cta-f-portrait.format--1080x1510 .cta__container--primary {
+        display: flex;
+        top: 81pt;
+        left: 81pt;
+        width: 194pt;
+        height: 194pt;
+        padding: 19pt;
+        border-width: 5.4pt;
+      }
+
+      .theme--full-img-h-cta-landscape.format--820x312 .cta__container--secondary {
+        display: flex;
+        bottom: -82pt;
+        right: -77pt;
+        width: 80pt;
+        height: 80pt;
+        padding: 12pt 9pt;
+        border-width: 2pt;
+      }
+
+      /* 5.5x8 */
+      .theme--half-img-h-c-cta-f-portrait.format--5x8 .cta__container--primary {
+        display: flex;
+        top: 27pt;
+        left: 26pt;
+        width: 109pt;
+        height: 109pt;
+        padding: 12pt;
+        border-width: 2.4pt;
+      }
+
+      .layout--border.theme--half-img-h-c-cta-f-portrait.format--5x8 .cta__container--primary {
+        top: 44pt;
+        left: 44pt;
+      }
+
+      /* 8x11 */
+      .theme--half-img-h-c-cta-f-portrait.format--8x11 .cta__container--primary {
+        display: flex;
+        top: 27pt;
+        left: 26pt;
+        width: 142pt;
+        height: 142pt;
+        padding: 15pt;
+        border-width: 2.9pt;
+      }
+
+      .layout--border.theme--half-img-h-c-cta-f-portrait.format--8x11 .cta__container--primary {
+        top: 45pt;
+        left: 44pt;
+      }
+      /* 11x17 */
+      .theme--half-img-h-c-cta-f-portrait.format--11x17 .cta__container--primary {
+        display: flex;
+        top: 47pt;
+        left: 44pt;
+        width: 182pt;
+        height: 182pt;
+        padding: 20pt;
+        border-width: 3.6pt;
+      }
+
+      .layout--border.theme--half-img-h-c-cta-f-portrait.format--11x17 .cta__container--primary {
+        top: 81pt;
+        left: 80pt;
+      }
+
+      .theme--half-img-h-cta-portrait .cta__container--secondary {
+        display: flex;
+        bottom: -253pt;
+        right: 20pt;
+        width: 250pt;
+        height: 250pt;
+        padding: 28pt;
+        border-width: 8pt;
+      }
+      .layout--border.theme--half-img-h-cta-portrait .cta__container--secondary { bottom: 67pt; }
+
+      .theme--half-img-h-cta-landscape.format--1920x1080 .cta__container--secondary {
+        display: flex;
+        bottom: 23pt;
+        right: 24pt;
+        width: 250pt;
+        height: 250pt;
+        padding: 28pt 28pt 35pt;
+        border-width: 8pt;
+      }
+
+      .theme--half-img-h-cta-landscape.format--820x312 .cta__container--secondary {
+        display: flex;
+        bottom: 11pt;
+        right: 12pt;
+        width: 80.5pt;
+        height: 80.5pt;
+        padding: 9pt 9pt 11pt;
+        border-width: 2.6pt;
+      }
+
+      .theme--full-img-h-cta-portrait .cta__container--secondary {
+        display: flex;
+        bottom: -252pt;
+        right: 16pt;
+        width: 250pt;
+        height: 250pt;
+        padding: 25pt;
+        border-width: 7pt;
+      }
+
+      .theme--full-img-h-cta-landscape.format--1920x1080 .cta__container--secondary {
+        display: flex;
+        bottom: -280pt;
+        right: 12pt;
+        width: 250pt;
+        height: 250pt;
+        padding: 25pt;
+        border-width: 7pt;
+      }
+
+      .cta {
+        font-weight: 500;
+        text-align: center;
+        color: var(--white);
+      }
+
+      .callOutTheme--solid .cta { color: var(--dynamic-{{LL_colour-selection--t7}}); }
+
+      .theme--full-img-h-cta-portrait .cta {
+        font-size: 33.8pt;
+        line-height: 1.05em;
+      }
+
+      .theme--half-img-h-c-cta-f-landscape .cta {
+        font-size: 18pt;
+        line-height: 1.2em;
+      }
+
+      .theme--full-img-h-cta-landscape.format--1920x1080 .cta {
+        font-size: 33.8pt;
+        line-height: 1.05em;
+      }
+
+      .theme--half-img-h-c-cta-f-portrait.format--210x297 .cta {
+        font-size: 16pt;
+        line-height: 1.05em;
+      }
+
+      .theme--half-img-h-c-cta-f-portrait.format--297x420 .cta {
+        font-size: 23pt;
+        line-height: 1.05em;
+      }
+
+      .theme--full-img-h-cta-landscape.format--820x312 .cta {
+        font-size: 10.7pt;
+        line-height: 1.1em;
+      }
+
+      .theme--half-img-h-c-cta-f-portrait.format--762x1016 .cta {
+        font-size: 67.5pt;
+        line-height: 1.05em;
+      }
+
+      .theme--half-img-h-c-cta-f-portrait.format--148x210 .cta {
+        font-size: 11.5pt;
+        line-height: 1.05em;
+      }
+
+      .theme--half-img-h-cta-portrait .cta {
+        font-size: 33.2pt;
+        line-height: 1.1em;
+      }
+
+      .theme--half-img-h-cta-landscape.format--1920x1080 .cta {
+        font-size: 33.2pt;
+        line-height: 1.1em;
+      }
+
+      .theme--half-img-h-c-cta-f-portrait.format--1080x1920 .cta {
+        font-size: 24.6pt;
+        line-height: 1.2em;
+      }
+
+      .theme--half-img-h-cta-landscape.format--820x312 .cta {
+        font-size: 11pt;
+        line-height: 1.05em;
+      }
+
+      .theme--half-img-h-c-cta-f-portrait.format--1080x1510 .cta {
+        font-size: 26.7pt;
+        line-height: 1em;
+      }
+      /* 5.5x8 */
+      .theme--half-img-h-c-cta-f-portrait.format--5x8 .cta {
+        font-size: 16.3pt;
+        line-height: 1.05em;
+      }
+      /* 8x11 */
+      .theme--half-img-h-c-cta-f-portrait.format--8x11 .cta {
+        font-size: 19.9pt;
+        line-height: 1.05em;
+      }
+      /* 11x17 */
+      .theme--half-img-h-c-cta-f-portrait.format--11x17 .cta {
+        font-size: 26.4pt;
+        line-height: 1.05em;
+      }
+
+      .callOutTheme--solid .cta__container {
+        background-color: var(--white);
+      }
+
+      .section { 
+        position: relative; 
+        display: flex;
+        flex-direction: column;
+        flex: 1 0 0%;
+      }
+
+      .theme--half-img-h .section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex: 1 0 0%;
+        padding: 11pt 11pt 11pt 18.7pt;
+      }
+
+      .theme--full-img .section { display: none; }
+      .theme--half-img-h-cta-portrait .section { flex: 1 0 0%; }
+      .theme--half-img-h-cta-portrait.layout--border .section { padding: 13pt 35pt; }
+      .theme--half-img-h-c .section { flex: 1 0 0%; }
+      .theme--half-img-h-c.format--1200x500 .section { padding: 0pt 31.6pt; }
+      .layout--border.theme--half-img-h-c.format--1200x500 .section { padding: 19pt 31pt; }
+      .theme--half-img-h-c.format--1400x650 .section { padding: 25.9pt 33.3pt; }
+      .theme--half-img-h-cta-landscape .section { flex: 1; }
+      .theme--half-img-h-cta-landscape.format--1920x1080 .section { padding: 16.6pt 52pt 281pt; }
+      .layout--border.theme--half-img-h-cta-landscape.format--1920x1080 .section { padding: 45.6pt 52pt 323; }
+      .theme--half-img-h-cta-landscape.format--820x312 .section { padding: 6.5pt 22.5pt 95pt; }
+      .layout--border.theme--half-img-h-cta-landscape.format--820x312 .section { padding: 11.5pt 22.5pt 92pt; }     
+
+      .theme--half-img-h-c-cta-f-portrait .section { 
+        display: flex;
+        flex-direction: column;
+        flex: 1 0 0%;
+      }
+
+      .theme--half-img-h-c-cta-f-portrait.format--297x420 .section { padding: 27.9pt 0pt 0pt; }
+      .layout--border.theme--half-img-h-c-cta-f-portrait.format--297x420 .section { padding: 28.3pt 27.9pt 22pt; }
+      .theme--half-img-h-c-cta-f-portrait.format--210x297 .section { padding: 26pt 5pt 0pt; }
+      .layout--border.theme--half-img-h-c-cta-f-portrait.format--210x297 .section { padding: 26pt 21pt 14pt; }
+      .theme--half-img-h-c-cta-f-portrait.format--148x210 .section { padding: 20pt 0pt 0pt }
+      .layout--border.theme--half-img-h-c-cta-f-portrait.format--148x210 .section { padding: 20pt 14pt 13pt; }
+      .theme--half-img-h-c-cta-f-portrait.format--762x1016 .section { padding: 88pt 0pt 0pt; }
+      .layout--border.theme--half-img-h-c-cta-f-portrait.format--762x1016 .section { padding: 88pt 83pt 55pt; }
+      .theme--half-img-h-c-cta-f-portrait.format--1080x1920 .section { padding: 40.8pt 0pt 0pt; }
+      .layout--border.theme--half-img-h-c-cta-f-portrait.format--1080x1920 .section { padding: 40.8pt 25pt 19pt; }
+      .theme--half-img-h-c-cta-f-portrait.format--1080x1510 .section { padding: 34.3pt 0pt 0pt; }
+      .layout--border.theme--half-img-h-c-cta-f-portrait.format--1080x1510 .section { padding: 19pt; }
+      /* 5.5x8 */
+      .theme--half-img-h-c-cta-f-portrait.format--5x8 .section { padding: 24pt 27pt 0pt }
+      .layout--border.theme--half-img-h-c-cta-f-portrait.format--5x8 .section { padding: 24pt 0pt 0pt }
+      /* 8x11 */
+      .theme--half-img-h-c-cta-f-portrait.format--8x11 .section { padding: 54pt 44pt 0pt; }
+      .layout--border.theme--half-img-h-c-cta-f-portrait.format--8x11 .section { padding: 54pt 17pt 0pt; }
+      /* 11x17 */
+      .theme--half-img-h-c-cta-f-portrait.format--11x17 .section { padding: 72.9pt 44pt 0pt; }
+      .layout--border.theme--half-img-h-c-cta-f-portrait.format--11x17 .section { padding: 72.9pt 0pt 0pt; }
+
+      .theme--half-img-h-c-cta-f-landscape .section {
+        display: flex;
+        flex-direction: column;
+        flex: 1 0 0%;
+        padding: 5pt 0pt 0 37pt;
+      }
+
+      .layout--border.theme--half-img-h-c-cta-f-landscape .section { padding: 30pt 27pt 19pt 37pt; }
+      .layout--border .section { background-color: var(--dynamic-{{LL_colour-selection--t7}}); }
+
+      .content { flex: 1 0 0%; } 
+      .theme--half-img-h-cta-portrait .content { padding: 24pt 0pt; }
+      .theme--half-img-h-c-cta-f-portrait .content,
+      .theme--half-img-h-c-cta-f-landscape .content { padding-bottom: 20pt; }
+      .theme--half-img-h-c-cta-f-portrait.format--762x1016 .content { padding-bottom: 50pt; }
+      .theme--half-img-h .content {
+        display: flex;
+        flex: 1 0 0%;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+
+      .theme--full-img-h-c .heading { margin-bottom: 22pt; }
+      .theme--full-img-h-c .heading h1,
+      .theme--full-img-h .heading h1,
+      .theme--full-img-h-cta-portrait .heading h1,
+      .theme--full-img-h-cta-landscape .heading h1 { color: var(--dynamic-{{LL_colour-selection--t7}}); }
+
+      .theme--half-img-h-c.format--1200x500 .heading { margin-bottom: 22pt; }
+      .layout--border.theme--half-img-h-c.format--1200x500 .heading { margin-bottom: 25pt; }
+      .theme--half-img-h-c.format--1400x650 .heading { margin-bottom: 26pt; }
+      .theme--half-img-h-c-cta-f-portrait.format--297x420 .heading { margin-bottom: 19pt; }
+      .theme--half-img-h-c-cta-f-portrait.format--210x297 .heading { margin-bottom: 13pt; }
+      .theme--half-img-h-c-cta-f-portrait.format--148x210 .heading {  margin-bottom: 8pt; }
+      .theme--half-img-h-c-cta-f-portrait.format--762x1016 .heading { margin-bottom: 56pt; }
+      .theme--half-img-h-c-cta-f-portrait.format--1080x1920 .heading {  margin-bottom: 32pt; }
+      .theme--half-img-h-c-cta-f-portrait.format--1080x1510 .heading { margin-bottom: 32pt; }
+      .theme--half-img-h-c-cta-f-landscape .heading {  margin-bottom: 59pt; }
+      .layout--border.theme--half-img-h-c-cta-f-landscape .heading { margin-bottom: 52pt; }
+      .layout--border.theme--half-img-h-cta-portrait .heading {
+        font-size: 92.6pt;
+        max-height: 353pt;
+
+      }
+      /* 5.5x8 */
+      .theme--half-img-h-c-cta-f-portrait.format--5x8 .heading {  margin-bottom: 13.2pt; }
+      /* 8x11 */
+      .theme--half-img-h-c-cta-f-portrait.format--8x11 .heading { margin-bottom: 13pt; }
+      /* 11x17 */
+      .theme--half-img-h-c-cta-f-portrait.format--11x17 .heading { margin-bottom: 30pt; }
+
+      .heading h1 {
+        font-weight: bold;
+        color: var(--white);
+      }
+
+      .theme--full-img-h .heading h1 {
+        font-size: 32pt;
+        line-height: 1em;
+      }
+
+      .theme--full-img-h-c.format--1400x650 .heading h1 {     
+        font-size: 51.7pt;   
+        line-height: 1em;
+      }
+
+      .theme--full-img-h-c.format--1200x500 .heading h1 {    
+        font-size: 47.5pt;
+        line-height: 1.05em;
+      }
+
+      .theme--full-img-h-cta-portrait .heading h1 {
+        font-size: 92.2pt;
+        line-height: 1.1em;
+      }
+
+      .theme--full-img-h-cta-landscape.format--1920x1080 .heading h1 {
+        font-size: 93.7pt;
+        line-height: 1.05em;
+      }
+
+      .theme--full-img-h-cta-landscape.format--820x312 .heading h1 {
+        font-size: 30pt;
+        line-height: 1.05em;
+      }
+
+      .theme--half-img-h .heading h1 {
+        font-size: 32.3pt;
+        line-height: 1em;
+      }
+
+      .theme--half-img-h-cta-portrait .heading h1 {
+        /*font-size: 92.6pt;*/
+        line-height: 1.1em;
+      }
+
+      .theme--half-img-h-c.format--1200x500 .heading h1 {
+        font-size: 47.4pt;
+        line-height: 1.05em;
+      }
+
+      .theme--half-img-h-c.format--1400x650 .heading h1 {   
+        font-size: 52.4pt;
+        line-height: 0.95em;
+      }
+
+      .theme--half-img-h-cta-landscape.format--1920x1080 .heading h1 {
+        font-size: 94.5pt;
+        line-height: 1.05em;
+        letter-spacing: -0.8pt;
+      }
+
+      .theme--half-img-h-cta-landscape.format--820x312 .heading h1 {
+        font-size: 29.9pt;
+        line-height: 1.1em;
+      }
+
+      .theme--half-img-h-c-cta-f-portrait.format--297x420 .heading h1 {
+        font-size: 60.2pt;
+        line-height: 1.1em;
+      }
+
+      .theme--half-img-h-c-cta-f-portrait.format--210x297 .heading h1 {    
+        font-size: 41.9pt;
+        line-height: 1.1em;
+      }
+
+      .theme--half-img-h-c-cta-f-portrait.format--148x210 .heading h1 {     
+        font-size: 29.9pt;
+        line-height: 1.1em;
+      }
+
+      .theme--half-img-h-c-cta-f-portrait.format--762x1016 .heading h1 {     
+        font-size: 154.5pt;
+        line-height: 1.05em;
+      }
+
+      .theme--half-img-h-c-cta-f-portrait.format--1080x1920 .heading h1 { 
+        font-size: 59.9pt;
+        line-height: 1em;
+      }
+
+      .theme--half-img-h-c-cta-f-portrait.format--1080x1510 .heading h1 { 
+        font-size: 60.2pt;
+        line-height: 1em;
+      }
+
+      .theme--half-img-h-c-cta-f-landscape .heading h1 {
+        font-size: 58.5pt;
+        line-height: 1em;
+      }
+      /* 5.5x8 */
+      .theme--half-img-h-c-cta-f-portrait.format--5x8 .heading h1 {     
+        font-size: 29.9pt;
+        line-height: 1.1em;
+      }
+      /* 8x11 */
+      .theme--half-img-h-c-cta-f-portrait.format--8x11 .heading h1 {    
+        font-size: 40.1pt;
+        line-height: 1.1em;
+      }
+      /* 11x17 */
+      .theme--half-img-h-c-cta-f-portrait.format--11x17 .heading h1 {
+        font-size: 60.2pt;
+        line-height: 1.05em;
+      }
+
+      .column__container,
+      .column__container--abuzz,
+      .column__container--landscapeDigitalBoard,
+      .column__container--portraitDigitalBoard,
+      .column__container--poster30x40,
+      .column__container--posterA4,
+      .column__container--posterA5,
+      .column__container--posterA3,
+      .column__container--edmBannerHalfImage { display: none; }
+      
+      /*.theme--half-img-h-c-cta-f-portrait.format--1080x1510.variationChoice--abuzz .column__container--primary { display: none;}*/
+      /*.theme--half-img-h-c-cta-f-portrait.format--1080x1510 .column__container--abuzz { }*/
+
+      .theme--half-img-h-c-cta-f-portrait .column__container--primary,
+      .theme--full-img-h-c .column__container--primary,
+      .theme--half-img-h-c .column__container--primary { display: flex; }
+      .theme--half-img-h-c-cta-f-portrait.format--297x420 .column__container--primary { margin-left: -35pt; }
+      .theme--half-img-h-c-cta-f-portrait.format--210x297 .column__container--primary { margin-left: -24pt; }
+      .theme--half-img-h-c-cta-f-portrait.format--148x210 .column__container--primary { margin-left: -16pt; }
+      .theme--half-img-h-c-cta-f-portrait.format--762x1016 .column__container--primary { margin-left: -84pt; }
+      .theme--half-img-h-c-cta-f-portrait.format--1080x1920 .column__container--primary { margin-left: -30pt; }
+      .theme--half-img-h-c-cta-f-portrait.format--1080x1510 .column__container--primary { margin-left: -31pt; font-size: 16.4pt; }
+      .theme--half-img-h-c-cta-f-portrait.format--1080x1510.variationChoice--abuzz .column__container--primary { display: none;}
+      .theme--half-img-h-c-cta-f-portrait.format--1080x1510.variationChoice--abuzz .column__container--abuzz { display: flex !important; margin-left: -31pt; font-size: 16.4pt; }
+      .theme--half-img-h-c-cta-f-landscape.variationChoice--landscape-digital-board .column__container--primary { display: none;}
+      .theme--half-img-h-c-cta-f-landscape.variationChoice--landscape-digital-board .column__container--landscapeDigitalBoard { display: flex !important; margin-left: -32pt; font-size: 14.8pt;}
+      .theme--half-img-h-c-cta-f-portrait.variationChoice--portrait-digital-board .column__container--primary { display: none;}
+      .theme--half-img-h-c-cta-f-portrait.variationChoice--portrait-digital-board .column__container--portraitDigitalBoard { display: flex !important; margin-left: -30pt; font-size: 18.5pt;}
+      .theme--half-img-h-c-cta-f-portrait.format--762x1016.variationChoice--poster-30x40 .column__container--primary { display: none;}
+      .theme--half-img-h-c-cta-f-portrait.format--762x1016.variationChoice--poster-30x40 .column__container--poster30x40 { display: flex !important; margin-left: -84pt; font-size: 41.3pt;  }
+      .theme--half-img-h-c-cta-f-portrait.format--210x297.variationChoice--poster-a4 .column__container--primary { display: none;}
+      .theme--half-img-h-c-cta-f-portrait.format--210x297.variationChoice--poster-a4 .column__container--posterA4 { display: flex !important; margin-left: -24pt; font-size: 12.5pt; }
+      .theme--half-img-h-c-cta-f-portrait.format--148x210.variationChoice--poster-a5 .column__container--primary { display: none;}
+      .theme--half-img-h-c-cta-f-portrait.format--148x210.variationChoice--poster-a5 .column__container--posterA5 { display: flex !important; margin-left: -16pt; font-size: 9.3pt;}
+      .theme--half-img-h-c-cta-f-portrait.format--297x420.variationChoice--poster-a3 .column__container--primary { display: none;}
+      .theme--half-img-h-c-cta-f-portrait.format--297x420.variationChoice--poster-a3 .column__container--posterA3 { display: flex !important; margin-left: -35pt; font-size: 17pt;}
+      .theme--half-img-h-c.variationChoice--edm-banner-half-image .column__container--primary { display: none;}
+      .theme--half-img-h-c.variationChoice--edm-banner-half-image .column__container--edmBannerHalfImage { display: flex !important; font-size: 18.1pt; }
+      .theme--full-img-h-c.variationChoice--edm-banner-full-image .column__container--primary { display: none;}
+      .theme--full-img-h-c.variationChoice--edm-banner-full-image .column__container--edmBannerFullImage { display: flex !important; font-size: 18pt; }
+      /* 5.5x8 */
+      .theme--half-img-h-c-cta-f-portrait.format--5x8 .column__container--primary { margin-left: -16pt; }
+      /* 8x11 */
+      .theme--half-img-h-c-cta-f-portrait.format--8x11 .column__container--primary { margin-left: -34pt; }
+      .theme--half-img-h-c-cta-f-landscape .column__container--primary { 
+        display: flex;
+        max-height: 110pt;
+        margin-left: -32pt; 
+      }   
+      /* 11x17 */
+      .theme--half-img-h-c-cta-f-portrait.format--11x17 .column__container--primary { margin-left: -35pt; }
+      .layout--border.theme--half-img-h-c-cta-f-landscape .column__container--primary { margin-left: -27pt; }
+
+      .theme--half-img-h-c-cta-f-portrait .column { flex: 1 0 0%; }
+      .theme--half-img-h-c-cta-f-portrait.format--297x420 .column { margin-left: 35pt; }
+      .theme--half-img-h-c-cta-f-portrait.format--210x297 .column { margin-left: 24pt; }
+      .theme--half-img-h-c-cta-f-portrait.format--148x210 .column { margin-left: 16pt; }
+      .theme--half-img-h-c-cta-f-portrait.format--762x1016 .column { margin-left: 84pt; }
+      .theme--half-img-h-c-cta-f-portrait.format--1080x1920 .column { margin-left: 30pt; }
+      .theme--half-img-h-c-cta-f-portrait.format--1080x1510 .column { margin-left: 31pt; }
+      .theme--half-img-h-c-cta-f-landscape .column { 
+        flex: 1 0 0%;
+        margin-left: 32pt; 
+      }
+      /* 5.5x8 */
+      .theme--half-img-h-c-cta-f-portrait.format--5x8 .column { margin-left: 16pt; }
+      /* 8x11 */
+      .theme--half-img-h-c-cta-f-portrait.format--8x11 .column { margin-left: 34pt; }
+      /* 11x17 */
+      .theme--half-img-h-c-cta-f-portrait.format--11x17 .column { margin-left: 35pt; }
+      .theme--half-img-h-c-cta-f-landscape .column--tertiary { display: none; }
+      .layout--border.theme--half-img-h-c-cta-f-landscape .column { margin-left: 27pt; }
+      .theme--half-img-h-c-cta-f-landscape .column--tertiary { display: none; }
+      .theme--full-img-h-c .column--secondary,
+      .theme--full-img-h-c .column--tertiary,
+      .theme--half-img-h-c .column--secondary,
+      .theme--half-img-h-c .column--tertiary { display: none; }
+
+      .column h4 {
+        font-weight: bold;
+        line-height: 1.2em;
+        color: var(--white);
+      }
+
+      .theme--full-img-h-c .column h4 { line-height: 1.2em; }
+
+      .theme--full-img-h-c.format--1400x650 .column h4 {
+        font-size: 19pt;
+        margin-bottom: 3.5pt;
+      }
+
+      .theme--full-img-h-c.format--1200x500 .column h4 {
+        margin-bottom: 3.5pt;
+        font-size: 19pt;
+      }
+
+      .theme--half-img-h-c .column h4 { margin-bottom: 0.15em; }
+      .theme--half-img-h-c.format--1400x650 .column h4 { font-size: 19.5pt; }
+      .theme--half-img-h-c-cta-f-portrait .column h4 { line-height: 1.2em; }
+      .theme--half-img-h-c-cta-f-portrait.format--297x420 .column h4 {
+        margin-bottom: 5.1pt;
+        font-size: 17pt;
+      }
+      
+      .theme--half-img-h-c-cta-f-portrait.format--297x420.variationChoice--poster-a3 .column h4 {
+        font-size: 1em;
+      }
+
+      .layout--border.theme--half-img-h-c-cta-f-portrait.format--297x420 .column h4 {
+        margin-bottom: 5.6pt;
+        font-size: 16.3pt;
+      }
+      
+      .layout--border.theme--half-img-h-c-cta-f-portrait.format--297x420.variationChoice--poster-a3 .column h4 {
+        font-size: 0.96em;
+      }
+
+      .theme--half-img-h-c-cta-f-portrait.format--210x297 .column h4 {   
+        margin-bottom: 3pt;
+        font-size: 12.5pt;
+      }
+      
+      .theme--half-img-h-c-cta-f-portrait.format--210x297.variationChoice--poster-a4 .column h4 {
+        font-size: 1em;
+      }
+
+      .layout--border.theme--half-img-h-c-cta-f-portrait.format--210x297 .column h4 { font-size: 11.8pt; }
+      .theme--half-img-h-c-cta-f-portrait.format--148x210 .column h4 {
+        margin-bottom: 3pt;
+        font-size: 9.3pt;
+      }
+      
+      .theme--half-img-h-c-cta-f-portrait.format--148x210.variationChoice--poster-a5 .column h4 {
+        font-size: 1em;
+      }
+
+      .theme--half-img-h-c-cta-f-portrait.format--762x1016 .column h4 {  
+        margin-bottom: 8pt;
+        font-size: 41.3pt;
+      }
+      
+      .theme--half-img-h-c-cta-f-portrait.format--762x1016.variationChoice--poster-30x40 .column h4 {
+        font-size: 1em;
+      }
+
+      .theme--half-img-h-c-cta-f-portrait.format--1080x1920 .column h4 {
+        margin-bottom: 3pt;
+        font-size: 18.5pt;
+      }
+      
+      .theme--half-img-h-c-cta-f-portrait.format--1080x1920.variationChoice--portrait-digital-board .column h4 {
+        font-size: 1em;
+      }
+
+      .theme--half-img-h-c-cta-f-portrait.format--1080x1510 .column h4 {
+        margin-bottom: 3.1pt;
+        font-size: 16.2pt;
+        line-height: 1.1em;
+      }
+      
+      .theme--half-img-h-c-cta-f-portrait.format--1080x1510.variationChoice--abuzz .column h4 {
+        font-size: 0.99em;
+      }
+
+      .theme--half-img-h-c-cta-f-landscape .column h4 {
+        margin-bottom: 2pt;
+        font-size: 14.8pt;
+        line-height: 1.1em;
+      }
+      
+      .theme--half-img-h-c-cta-f-landscape.variationChoice--landscape-digital-board .column h4 {
+        font-size: 1em;
+      }
+      /* 5.5x8 */
+      .theme--half-img-h-c-cta-f-portrait.format--5x8 .column h4 {
+        margin-bottom: 3pt;
+        font-size: 9.3pt;
+      }
+      /* 8x11 */
+      .theme--half-img-h-c-cta-f-portrait.format--8x11 .column h4 {   
+        margin-bottom: 3pt;
+        font-size: 12.1pt;
+      }
+      /* 11x17 */
+      .theme--half-img-h-c-cta-f-portrait.format--11x17 .column h4 {
+        margin-bottom: 5.6pt;
+        font-size: 16.1pt;
+      }
+
+      .column p { 
+        margin-bottom: 0.5em;
+        color: var(--white); 
+      }
+
+      .theme--full-img-h-c .column p { line-height: 1.15em; }
+      .theme--full-img-h-c.format--1400x650 .column p {
+        margin-bottom: 10pt;
+        font-size: 19.4pt;
+      }
+
+      .theme--full-img-h-c.format--1200x500 .column p {
+        font-size: 18pt;
+        line-height: 1.05em;
+      }
+      
+      .theme--full-img-h-c.format--1200x500.variationChoice--edm-banner-full-image .column p {
+        font-size: 1em;
+      }
+
+      .theme--half-img-h-c.format--1200x500 .column p {   
+        font-size: 18.1pt;
+        line-height: 1.1em;
+      }
+      
+      .theme--half-img-h-c.format--1200x500.variationChoice--edm-banner-half-image .column p {
+        font-size: 1em;
+      }
+
+      .theme--half-img-h-c.format--1400x650 .column p {
+        font-size: 19.5pt;
+        line-height: 1.15em;
+      }
+
+      .theme--half-img-h-c-cta-f-portrait.format--297x420 .column p {
+        font-size: 16.2pt;
+        line-height: 1.1em;
+      }
+      
+      .theme--half-img-h-c-cta-f-portrait.format--297x420.variationChoice--poster-a3 .column p {
+        font-size: 0.95em;
+      }
+
+      .theme--half-img-h-c-cta-f-portrait.format--210x297 .column p {
+        font-size: 12pt;
+        line-height: 1.2em;
+      }
+      
+      .theme--half-img-h-c-cta-f-portrait.format--210x297.variationChoice--poster-a4 .column p {
+        font-size: 0.96em;
+      }
+
+      .theme--half-img-h-c-cta-f-portrait.format--148x210 .column p {
+        font-size: 8.9pt;
+        line-height: 1.2em;
+      }
+      
+      .theme--half-img-h-c-cta-f-portrait.format--148x210.variationChoice--poster-a5 .column p {
+        font-size: 0.96em;
+      }
+
+      .theme--half-img-h-c-cta-f-portrait.format--762x1016 .column p {
+        font-size: 39.8pt;
+        line-height: 1.15em;
+      }
+      
+      .theme--half-img-h-c-cta-f-portrait.format--762x1016.variationChoice--poster-30x40 .column p {
+        font-size: 0.965em;
+      }
+
+      .theme--half-img-h-c-cta-f-portrait.format--1080x1920 .column p {
+        font-size: 17.8pt;
+        line-height: 1.15em;
+      }
+      
+      .theme--half-img-h-c-cta-f-portrait.format--1080x1920.variationChoice--portrait-digital-board .column p {
+        font-size: 0.96em;
+      }
+
+      .theme--half-img-h-c-cta-f-portrait.format--1080x1510 .column p {
+        font-size: 16.4pt;
+        line-height: 1.15em;
+      }
+      
+      .theme--half-img-h-c-cta-f-portrait.format--1080x1510.variationChoice--abuzz .column p {
+        font-size: 1em;
+      }
+
+      .theme--half-img-h-c-cta-f-landscape .column p {
+        font-size: 14.5pt;
+        line-height: 1.2em;
+      }
+      
+      .theme--half-img-h-c-cta-f-landscape.variationChoice--landscape-digital-board .column p {
+        font-size: 0.98em;
+      }
+      
+      /* 5.5x8 */
+      .theme--half-img-h-c-cta-f-portrait.format--5x8 .column p {
+        font-size: 8.9pt;
+        line-height: 1.4em;
+      }
+      /* 8x11 */
+      .theme--half-img-h-c-cta-f-portrait.format--8x11 .column p {
+        font-size: 12.1pt;
+        line-height: 1.35em;
+      }
+      /* 11x17 */
+      .theme--half-img-h-c-cta-f-portrait.format--11x17 .column p {
+        font-size: 16.2pt;
+        line-height: 1.2em;
+      }
+
+      .column h4:last-child,
+      .column p:last-child { margin-bottom: 0 !important; }
+      
+      .column__inner--abuzz {
+        font-size: {{{LL_body-content-text-size-slider-abuzz--t7}}}%;
+      }
+      
+      .column__inner--landscapeDigitalBoard {
+        font-size: {{{LL_body-content-text-size-slider-landscape-digital-board--t7}}}%;
+      }
+      
+      .column__inner--portraitDigitalBoard {
+        font-size: {{{LL_body-content-text-size-slider-portrait-digital-board--t7}}}%;
+      }
+      
+      .column__inner--poster30x40 {
+        font-size: {{{LL_body-content-text-size-slider-poster-30x40--t7}}}%;
+      }
+      
+      .column__inner--posterA4 {
+        font-size: {{{LL_body-content-text-size-slider-poster-a4--t7}}}%;
+      }
+      
+      .column__inner--posterA5 {
+        font-size: {{{LL_body-content-text-size-slider-poster-a5--t7}}}%;
+      }
+      
+      .column__inner--posterA3 {
+        font-size: {{{LL_body-content-text-size-slider-poster-a3--t7}}}%;
+      }
+      
+      .column__inner--edmBannerHalfImage {
+        font-size: {{{LL_body-content-text-size-slider-poster-edm-half-image--t7}}}%;
+      }
+      
+      .column__inner--edmBannerFullImage {
+        font-size: {{{LL_body-content-text-size-slider-poster-edm-full-image--t7}}}%;
+      }
+
+      .footer { display: none; }
+
+      .theme--half-img-h-c-cta-f-portrait .footer,
+      .theme--half-img-h-c-cta-f-landscape .footer,
+      .theme--full-img-h-cta-landscape .footer { 
+        display: flex; 
+        align-items: flex-end;
+        width: 100%;
+      }
+      .theme--half-img-h-c-cta-f-portrait.format--297x420 .footer { height: 30pt; }
+      .theme--half-img-h-c-cta-f-portrait.format--210x297 .footer { height: 21.4pt; }
+      .theme--half-img-h-c-cta-f-portrait.format--148x210 .footer { height: 14.7pt; }
+      .theme--half-img-h-c-cta-f-portrait.format--762x1016 .footer { height: 73.7pt; }
+      .theme--half-img-h-c-cta-f-portrait.format--1080x1920 .footer { height: 27.7pt; }
+      .theme--half-img-h-c-cta-f-portrait.format--1080x1510 .footer { height: 27.7pt; }
+      .theme--half-img-h-c-cta-f-landscape .footer { height: 20.7pt; }
+      /* 5.5x8 */
+      .theme--half-img-h-c-cta-f-portrait.format--5x8 .footer { height: 18.4pt; }
+      /* 8x11 */
+      .theme--half-img-h-c-cta-f-portrait.format--8x11 .footer { height: 20.6pt; }
+      /* 11x17 */
+      .theme--half-img-h-c-cta-f-portrait.format--11x17 .footer { height: 30pt; }
+
+      .logo {
+        width: 50%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+
+      .logo--main {
+        background-image: var(--primary-logo);
+        background-position: right;
+      }
+
+      .logo--partner {
+        background-image: var(--secondary-logo);
+        background-position: left;
+        transform-origin: left;
+      }  
+      /* 5.5x8 */
+      .theme--half-img-h-c-cta-f-portrait.format--5x8 .logo--partner {
+        height: 79%;
+        transform-origin: bottom left;
+      }
+
+      .mainLogoPosition--center[centre-logo="no-centre"] .logo--main,
+      .mainLogoPosition--left[centre-logo="no-centre"] .logo--main,
+      .mainLogoPosition--right[centre-logo="no-centre"] .logo--main {
+        width: 100%; 
+      }
+
+      .mainLogoPosition--center[centre-logo="no-centre"] .logo--main {     
+        background-position: center;
+      }
+
+      .mainLogoPosition--left[centre-logo="no-centre"] .logo--main {
+        background-position: left;
+      }
+
+      .mainLogoPosition--right[centre-logo="no-centre"] .logo--main {
+        background-position: right;
+      }
+
+
+      /* ANY OTHER STYLES THAT NEED MUSTACHE.JS CAPABILITIES */
+    </style>
+  </head>
+  <body style="background: white" data-crop="{{show-crop}}" data-reduce-export-font-size-by-percent="0" data-reduce-firefox-font-size-by-percent="0" centre-logo="{{{centre-choice}}}{{^centre-choice}}erina-fair{{/centre-choice}}"
+        class="theme--{{{LL_theme--t7}}}{{^LL_theme--t7}}corporate{{/LL_theme--t7}}
+               format--{{{LL_format--t7}}}
+               layout--{{{LL_layout--t7}}}{{^LL_layout--t7}}no-border{{/LL_layout--t7}}
+               variationChoice--{{{LL_variation-choice--t7}}}
+               themeColour--{{{LL_theme-colour--t7}}}{{^LL_theme-colour--t7}}}scheme-1{{/LL_theme-colour--t7}}
+               mainLogoPosition--{{{LL_main-logo-position--t7}}}{{^LL_main-logo-position--t7}}center{{/LL_main-logo-position--t7}}
+               callOutTheme--{{{LL_call-out-theme--t7}}}{{^LL_call-out-theme--t7}}transparent{{/LL_call-out-theme--t7}}">
+    <div class="placeholderMaster" data-opacity="{{ placeholder-opacity }}">
+      <div class="placeholderMaster__item" data-bg="{{ placeholder-image }}"></div>
+    </div><!-- end placeholderMaster -->
+    <div class="page">
+
+      <div class="bleed">
+
+        <div class="container fit">
+
+          <div class="backgroundImage"><div class="reposition-fix">{{{LL_background-image--t7}}}</div></div><!--backgroundImage-->
+          <div class="hero__container">
+            <div class="hero"><div class="reposition-fix">{{{LL_hero-image--t7}}}</div></div><!--hero-->
+            <div class="cta__container cta__container--primary">
+              {{#LL_call-out-text--t7}}<div class="cta" data-max-height="dynamic">{{{LL_call-out-text--t7}}}</div><!--cta-->{{/LL_call-out-text--t7}}
+            </div><!--cta__container-->
+          </div><!--hero__container-->
+          <div class="section">
+            <div class="content">
+              <div class="content__inner" data-max-height="dynamic">
+                {{#LL_headline--t7}}<div class="heading u-heading-patch" data-max-height="css">{{{LL_headline--t7}}}</div><!--heading-->{{/LL_headline--t7}}
+                <div class="column__container column__container--primary">
+                  {{#LL_body-content-1--t7}}
+                  <div class="column column--primary">{{{LL_body-content-1--t7}}}</div><!--column--primary-->
+                  {{/LL_body-content-1--t7}}
+                  {{#LL_body-content-2--t7}}
+                  <div class="column column--secondary">{{{LL_body-content-2--t7}}}</div><!--column--secondary-->
+                  {{/LL_body-content-2--t7}}
+                  {{#LL_body-content-3--t7}}
+                  <div class="column column--tertiary">{{{LL_body-content-3--t7}}}</div><!--column--tertiary-->
+                  {{/LL_body-content-3--t7}}
+                </div><!--column__container-->    
+                
+                <div class="column__container column__container--abuzz">
+                  {{#LL_body-content-1--t7}}
+                  <div class="column column--primary"><div class="column__inner column__inner--abuzz">{{{LL_body-content-1--t7}}}</div></div><!--column--primary-->
+                  {{/LL_body-content-1--t7}}
+                  {{#LL_body-content-2--t7}}
+                  <div class="column column--secondary"><div class="column__inner column__inner--abuzz">{{{LL_body-content-2--t7}}}</div></div><!--column--secondary-->
+                  {{/LL_body-content-2--t7}}
+                  {{#LL_body-content-3--t7}}
+                  <div class="column column--tertiary"><div class="column__inner column__inner--abuzz">{{{LL_body-content-3--t7}}}</div></div><!--column--tertiary-->
+                  {{/LL_body-content-3--t7}}
+                </div><!--column__container--> 
+                
+                <div class="column__container column__container--landscapeDigitalBoard">
+                  {{#LL_body-content-1--t7}}
+                  <div class="column column--primary"><div class="column__inner column__inner--landscapeDigitalBoard">{{{LL_body-content-1--t7}}}</div></div><!--column--primary-->
+                  {{/LL_body-content-1--t7}}
+                  {{#LL_body-content-2--t7}}
+                  <div class="column column--secondary"><div class="column__inner column__inner--landscapeDigitalBoard">{{{LL_body-content-2--t7}}}</div></div><!--column--secondary-->
+                  {{/LL_body-content-2--t7}}
+                  {{#LL_body-content-3--t7}}
+                  <div class="column column--tertiary"><div class="column__inner column__inner--landscapeDigitalBoard">{{{LL_body-content-3--t7}}}</div></div><!--column--tertiary-->
+                  {{/LL_body-content-3--t7}}
+                </div><!--column__container-->   
+                
+                 <div class="column__container column__container--portraitDigitalBoard">
+                  {{#LL_body-content-1--t7}}
+                  <div class="column column--primary"><div class="column__inner column__inner--portraitDigitalBoard">{{{LL_body-content-1--t7}}}</div></div><!--column--primary-->
+                  {{/LL_body-content-1--t7}}
+                  {{#LL_body-content-2--t7}}
+                  <div class="column column--secondary"><div class="column__inner column__inner--portraitDigitalBoard">{{{LL_body-content-2--t7}}}</div></div><!--column--secondary-->
+                  {{/LL_body-content-2--t7}}
+                  {{#LL_body-content-3--t7}}
+                  <div class="column column--tertiary"><div class="column__inner column__inner--portraitDigitalBoard">{{{LL_body-content-3--t7}}}</div></div><!--column--tertiary-->
+                  {{/LL_body-content-3--t7}}
+                </div><!--column__container-->  
+                
+                <div class="column__container column__container--poster30x40">
+                  {{#LL_body-content-1--t7}}
+                  <div class="column column--primary"><div class="column__inner column__inner--poster30x40">{{{LL_body-content-1--t7}}}</div></div><!--column--primary-->
+                  {{/LL_body-content-1--t7}}
+                  {{#LL_body-content-2--t7}}
+                  <div class="column column--secondary"><div class="column__inner column__inner--poster30x40">{{{LL_body-content-2--t7}}}</div></div><!--column--secondary-->
+                  {{/LL_body-content-2--t7}}
+                  {{#LL_body-content-3--t7}}
+                  <div class="column column--tertiary"><div class="column__inner column__inner--poster30x40">{{{LL_body-content-3--t7}}}</div></div><!--column--tertiary-->
+                  {{/LL_body-content-3--t7}}
+                </div><!--column__container--> 
+                
+                <div class="column__container column__container--posterA4">
+                  {{#LL_body-content-1--t7}}
+                  <div class="column column--primary"><div class="column__inner column__inner--posterA4">{{{LL_body-content-1--t7}}}</div></div><!--column--primary-->
+                  {{/LL_body-content-1--t7}}
+                  {{#LL_body-content-2--t7}}
+                  <div class="column column--secondary"><div class="column__inner column__inner--posterA4">{{{LL_body-content-2--t7}}}</div></div><!--column--secondary-->
+                  {{/LL_body-content-2--t7}}
+                  {{#LL_body-content-3--t7}}
+                  <div class="column column--tertiary"><div class="column__inner column__inner--posterA4">{{{LL_body-content-3--t7}}}</div></div><!--column--tertiary-->
+                  {{/LL_body-content-3--t7}}
+                </div><!--column__container--> 
+                
+                <div class="column__container column__container--posterA5">
+                  {{#LL_body-content-1--t7}}
+                  <div class="column column--primary"><div class="column__inner column__inner--posterA5">{{{LL_body-content-1--t7}}}</div></div><!--column--primary-->
+                  {{/LL_body-content-1--t7}}
+                  {{#LL_body-content-2--t7}}
+                  <div class="column column--secondary"><div class="column__inner column__inner--posterA5">{{{LL_body-content-2--t7}}}</div></div><!--column--secondary-->
+                  {{/LL_body-content-2--t7}}
+                  {{#LL_body-content-3--t7}}
+                  <div class="column column--tertiary"><div class="column__inner column__inner--posterA5">{{{LL_body-content-3--t7}}}</div></div><!--column--tertiary-->
+                  {{/LL_body-content-3--t7}}
+                </div><!--column__container--> 
+                
+                <div class="column__container column__container--posterA3">
+                  {{#LL_body-content-1--t7}}
+                  <div class="column column--primary"><div class="column__inner column__inner--posterA3">{{{LL_body-content-1--t7}}}</div></div><!--column--primary-->
+                  {{/LL_body-content-1--t7}}
+                  {{#LL_body-content-2--t7}}
+                  <div class="column column--secondary"><div class="column__inner column__inner--posterA3">{{{LL_body-content-2--t7}}}</div></div><!--column--secondary-->
+                  {{/LL_body-content-2--t7}}
+                  {{#LL_body-content-3--t7}}
+                  <div class="column column--tertiary"><div class="column__inner column__inner--posterA3">{{{LL_body-content-3--t7}}}</div></div><!--column--tertiary-->
+                  {{/LL_body-content-3--t7}}
+                </div><!--column__container--> 
+                
+                <div class="column__container column__container--edmBannerHalfImage">
+                  {{#LL_body-content-1--t7}}
+                  <div class="column column--primary"><div class="column__inner column__inner--edmBannerHalfImage">{{{LL_body-content-1--t7}}}</div></div><!--column--primary-->
+                  {{/LL_body-content-1--t7}}
+                  {{#LL_body-content-2--t7}}
+                  <div class="column column--secondary"><div class="column__inner column__inner--edmBannerHalfImage">{{{LL_body-content-2--t7}}}</div></div><!--column--secondary-->
+                  {{/LL_body-content-2--t7}}
+                  {{#LL_body-content-3--t7}}
+                  <div class="column column--tertiary"><div class="column__inner column__inner--edmBannerHalfImage">{{{LL_body-content-3--t7}}}</div></div><!--column--tertiary-->
+                  {{/LL_body-content-3--t7}}
+                </div><!--column__container--> 
+                
+                <div class="column__container column__container--edmBannerFullImage">
+                  {{#LL_body-content-1--t7}}
+                  <div class="column column--primary"><div class="column__inner column__inner--edmBannerFullImage">{{{LL_body-content-1--t7}}}</div></div><!--column--primary-->
+                  {{/LL_body-content-1--t7}}
+                  {{#LL_body-content-2--t7}}
+                  <div class="column column--secondary"><div class="column__inner column__inner--edmBannerFullImage">{{{LL_body-content-2--t7}}}</div></div><!--column--secondary-->
+                  {{/LL_body-content-2--t7}}
+                  {{#LL_body-content-3--t7}}
+                  <div class="column column--tertiary"><div class="column__inner column__inner--edmBannerFullImage">{{{LL_body-content-3--t7}}}</div></div><!--column--tertiary-->
+                  {{/LL_body-content-3--t7}}
+                </div><!--column__container--> 
+                
+              </div><!--content__inner-->
+            </div><!--content-->
+            <div class="footer" logo-style="{{logo-style}}">
+              <div class="logo logo--partner" style="transform: scale({{{secondary-logo-size}}}{{^secondary-logo-size}}1{{/secondary-logo-size}})"></div><!--logo--partner-->
+              <div class="logo logo--main"></div><!--logo--main-->
+            </div><!--footer-->
+            <div class="cta__container cta__container--secondary">
+              {{#LL_call-out-text--t7}}<div class="cta" data-max-height="dynamic">{{{LL_call-out-text--t7}}}</div><!--cta-->{{/LL_call-out-text--t7}}
+            </div><!--cta__container--secondary-->
+          </div><!--section-->
+
+        </div><!--container fit-->
+
+      </div><!--bleed-->
+
+    </div><!--page-->
+
+
+    <script>
+      window.showCrop = {{show-crop}}{{^show-crop}}true{{/show-crop}};
+    </script>
+    <script src="js/main.js"></script>   
+    <script src="js/prefixfree.js"></script>
+    <script src="js/char-limit.js"></script>
+    <script src="js/placeholder-controller.js"></script>
+    <script src="js/check-export-mode.js"></script>
+    <script src="js/max-line-check.js"></script>
+    <script src="js/max-height-check.js"></script>
+    <script src="js/hide-empty-titles.js"></script>
+    <script src="js/custom-rich-text.js"></script>
+    <script src="js/dynamic-inject.js"></script>
+    <script src="js/text-fit-min.js"></script>
+    <script src="https://outfit-assets-production.s3-accelerate.amazonaws.com/scripts/textfit.0.0.4.min.js" type="text/javascript"></script>
+    <script>
+      {{ #placeholder-toggle-new }}document.body.classList.add("u-placeholder-{{ placeholder-toggle-new }}{{^placeholder-toggle-new}}hide{{/placeholder-toggle-new}}"); {{ /placeholder-toggle-new }}
+      {{ #placeholder-validation }}document.body.classList.add("placeholder__validation--{{placeholder-validation}}"){{ /placeholder-validation }}
+    </script>
+    <script>
+
+      console.clear();
+
+      // Tracking text changes and firing text restriction functions (mutationObserver)
+      const overflowObserver = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+          maxLineCheck();
+          maxHeightCheck();
+          charLimit();
+          hideEmptyTitles();
+        });
+      });
+
+      const injectObserver = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+          injectDynamicContent();
+        });
+      });      
+
+      const injectSources = document.querySelectorAll('[data-target-id]');
+
+      overflowObserver.observe(document.body, {
+        attributes: false,
+        characterData: true,
+        childList: true,
+        subtree: true,
+        attributeOldValue: false,
+        characterDataOldValue: true
+      });
+
+      if ( injectSources.length > 0 ) {
+        injectSources.forEach(src => {
+          injectObserver.observe(src, {
+            attributes: false,
+            characterData: true,
+            childList: true,
+            subtree: true,
+            attributeOldValue: false,
+            characterDataOldValue: true
+          });            
+        });
+      }    
+
+      // Calling text size restriction functions once the fonts are loaded
+      document.fonts.ready.then(() => {
+        maxLineCheck();
+        maxHeightCheck();
+        injectDynamicContent();
+        hideEmptyTitles();
+      });
+
+
+      placeholderController();
+      checkCrop();
+      checkExport();
+      charLimit();
+
+      // TextFit function decreases the font of the selected element to make it fit in single line (if needed, uncomment the code bellow)
+      TextFit.fit({
+        selector: '.textFit'
+      });
+
+
+    </script>
+
+
+  </body>
+</html>
