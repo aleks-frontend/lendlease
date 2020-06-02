@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html data-sign="OS?">
+
+<head>
+  <title>Outfit</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" type="text/css" href="./css/minireset.css">
+  <link rel="stylesheet" type="text/css" href="./css/main.css">
+
+  <style>
+    @import url('https://outfit-assets-production.s3.amazonaws.com/fonts/Circular/stylesheet.css');
+    @import url('https://outfit-assets-production.s3.amazonaws.com/fonts/lend-lease/stylesheet.css');
+
+    /* Inputs Order
+    {{#theme-color}}{{/theme-color}}
+    {{#color-selection}}{{/color-selection}}
+    {{#LS--heading}}{{/LS--heading}}
+    {{#LS--subheading}}{{/LS--subheading}}
+    {{#partner-logo}}{{/partner-logo}}
+    */
+
+    :root {      
+      --white: #ffffff;
+      --grey: #cccccc;
+      --black: #000000;
+
+      --scheme-1-a: {{{account.colors.corporate-a}}};
+      --scheme-1-b: {{{account.colors.corporate-b}}};
+      --scheme-1-c: {{{account.colors.corporate-c}}};
+      --scheme-1-d: {{{account.colors.corporate-d}}};
+      --scheme-1-e: {{{account.colors.corporate-e}}};
+      --scheme-1-f: {{{account.colors.corporate-f}}};
+      --scheme-1-g: {{{account.colors.corporate-g}}};
+
+      --scheme-2-a: {{{account.colors.scheme-2-a}}};
+      --scheme-2-b: {{{account.colors.scheme-2-b}}};
+      --scheme-2-c: {{{account.colors.scheme-2-c}}};
+      --scheme-2-d: {{{account.colors.scheme-2-d}}};
+      --scheme-2-e: {{{account.colors.scheme-2-e}}};
+      --scheme-2-f: {{{account.colors.scheme-2-f}}};
+
+      --scheme-3-a: {{{account.colors.scheme-3-a}}};	
+      --scheme-3-b: {{{account.colors.scheme-3-b}}};
+      --scheme-3-c: {{{account.colors.scheme-3-c}}};
+      --scheme-3-d: {{{account.colors.scheme-3-d}}};
+      --scheme-3-e: {{{account.colors.scheme-3-e}}};
+      --scheme-3-f: {{{account.colors.scheme-3-f}}};
+
+      --scheme-4-a: {{{account.colors.scheme-4-a}}};	
+      --scheme-4-b: {{{account.colors.scheme-4-b}}};
+      --scheme-4-c: {{{account.colors.scheme-4-c}}};
+      --scheme-4-d: {{{account.colors.scheme-4-d}}};
+      --scheme-4-e: {{{account.colors.scheme-4-e}}};
+      --scheme-4-f: {{{account.colors.scheme-4-f}}};
+
+      --scheme-5-a: {{{account.colors.scheme-5-a}}};	
+      --scheme-5-b: {{{account.colors.scheme-5-b}}};
+      --scheme-5-c: {{{account.colors.scheme-5-c}}};
+      --scheme-5-d: {{{account.colors.scheme-5-d}}};
+      --scheme-5-e: {{{account.colors.scheme-5-e}}};
+      --scheme-5-f: {{{account.colors.scheme-5-f}}};
+
+      --scheme-6-a: {{{account.colors.scheme-6-a}}};	
+      --scheme-6-b: {{{account.colors.scheme-6-b}}};
+      --scheme-6-c: {{{account.colors.scheme-6-c}}};
+      --scheme-6-d: {{{account.colors.scheme-6-d}}};
+      --scheme-6-e: {{{account.colors.scheme-6-e}}};
+      --scheme-6-f: {{{account.colors.scheme-6-f}}};
+
+      --scheme-7-a: {{{account.colors.scheme-7-a}}};	
+      --scheme-7-b: {{{account.colors.scheme-7-b}}};
+      --scheme-7-c: {{{account.colors.scheme-7-c}}};
+      --scheme-7-d: {{{account.colors.scheme-7-d}}};
+      --scheme-7-e: {{{account.colors.scheme-7-e}}};
+      --scheme-7-f: {{{account.colors.scheme-7-f}}};
+
+      --scheme-8-a: {{{account.colors.scheme-8-a}}};
+      --scheme-8-b: {{{account.colors.scheme-8-b}}};
+      --scheme-8-c: {{{account.colors.scheme-8-c}}};
+      --scheme-8-d: {{{account.colors.scheme-8-d}}};
+      --scheme-8-e: {{{account.colors.scheme-8-e}}};
+      --scheme-8-f: {{{account.colors.scheme-8-f}}};
+
+      --scheme-9-a: {{{account.colors.scheme-9-a}}};	
+      --scheme-9-b: {{{account.colors.scheme-9-b}}};
+      --scheme-9-c: {{{account.colors.scheme-9-c}}};
+      --scheme-9-d: {{{account.colors.scheme-9-d}}};
+      --scheme-9-e: {{{account.colors.scheme-9-e}}};
+      --scheme-9-f: {{{account.colors.scheme-9-f}}};
+
+      --dynamic-color-a: {{{account.colors.corporate-a}}};
+      --dynamic-color-b: {{{account.colors.corporate-b}}};
+      --dynamic-color-c: {{{account.colors.corporate-c}}};
+      --dynamic-color-d: {{{account.colors.corporate-d}}};
+      --dynamic-color-e: {{{account.colors.corporate-e}}};
+      --dynamic-color-f: {{{account.colors.corporate-f}}};
+      --dynamic-color-g: {{{account.colors.corporate-g}}};
+    }
+    
+    .themeColour--scheme-1 {
+      --dynamic-color-a: {{{account.colors.corporate-a}}};
+      --dynamic-color-b: {{{account.colors.corporate-b}}};
+      --dynamic-color-c: {{{account.colors.corporate-c}}};
+      --dynamic-color-d: {{{account.colors.corporate-d}}};
+      --dynamic-color-e: {{{account.colors.corporate-e}}};
+      --dynamic-color-f: {{{account.colors.corporate-f}}};
+      --dynamic-color-g: {{{account.colors.corporate-g}}};
+      --primary-logo: url('https://files.outfit.io/media_library_items/111795/lendlease_RestrictedUseLogo_ColourScheme_Corp_CMYK.svg');
+    }
+
+    .themeColour--scheme-2 {
+      --dynamic-color-a: {{{account.colors.scheme-2-a}}};
+      --dynamic-color-b: {{{account.colors.scheme-2-b}}};
+      --dynamic-color-c: {{{account.colors.scheme-2-c}}};
+      --dynamic-color-d: {{{account.colors.scheme-2-d}}};
+      --dynamic-color-e: {{{account.colors.scheme-2-e}}};
+      --dynamic-color-f: {{{account.colors.scheme-2-f}}};
+      --primary-logo: url('https://files.outfit.io/media_library_items/111796/lendlease_RestrictedUseLogo_ColourScheme02_CMYK.svg');
+    }
+
+    .themeColour--scheme-3 {
+      --dynamic-color-a: {{{account.colors.scheme-3-a}}};
+      --dynamic-color-b: {{{account.colors.scheme-3-b}}};
+      --dynamic-color-c: {{{account.colors.scheme-3-c}}};
+      --dynamic-color-d: {{{account.colors.scheme-3-d}}};
+      --dynamic-color-e: {{{account.colors.scheme-3-e}}};
+      --dynamic-color-f: {{{account.colors.scheme-3-f}}};
+      --primary-logo: url('https://files.outfit.io/media_library_items/111793/lendlease_RestrictedUseLogo_ColourScheme03_CMYK.svg');
+    }
+
+    .themeColour--scheme-4 {
+      --dynamic-color-a: {{{account.colors.scheme-4-a}}};
+      --dynamic-color-b: {{{account.colors.scheme-4-b}}};
+      --dynamic-color-c: {{{account.colors.scheme-4-c}}};
+      --dynamic-color-d: {{{account.colors.scheme-4-d}}};
+      --dynamic-color-e: {{{account.colors.scheme-4-e}}};
+      --dynamic-color-f: {{{account.colors.scheme-4-a}}};
+      --primary-logo: url('https://files.outfit.io/media_library_items/111794/lendlease_RestrictedUseLogo_ColourScheme04_CMYK.svg');
+    }
+
+    .themeColour--scheme-5 {
+      --dynamic-color-a: {{{account.colors.scheme-5-a}}};
+      --dynamic-color-b: {{{account.colors.scheme-5-b}}};
+      --dynamic-color-c: {{{account.colors.scheme-5-c}}};
+      --dynamic-color-d: {{{account.colors.scheme-5-d}}};
+      --dynamic-color-e: {{{account.colors.scheme-5-e}}};
+      --dynamic-color-f: {{{account.colors.scheme-5-f}}};
+      --primary-logo: url('https://files.outfit.io/media_library_items/111798/lendlease_RestrictedUseLogo_ColourScheme05_CMYK.svg');
+    }
+
+    .themeColour--scheme-6 {
+      --dynamic-color-a: {{{account.colors.scheme-6-a}}};
+      --dynamic-color-b: {{{account.colors.scheme-6-b}}};
+      --dynamic-color-c: {{{account.colors.scheme-6-c}}};
+      --dynamic-color-d: {{{account.colors.scheme-6-d}}};
+      --dynamic-color-e: {{{account.colors.scheme-6-e}}};
+      --dynamic-color-f: {{{account.colors.scheme-6-f}}};
+      --primary-logo: url('https://files.outfit.io/media_library_items/111797/lendlease_RestrictedUseLogo_ColourScheme06_CMYK.svg');
+    }
+
+    .themeColour--scheme-7 {
+      --dynamic-color-a: {{{account.colors.scheme-7-a}}};
+      --dynamic-color-b: {{{account.colors.scheme-7-b}}};
+      --dynamic-color-c: {{{account.colors.scheme-7-c}}};
+      --dynamic-color-d: {{{account.colors.scheme-7-d}}};
+      --dynamic-color-e: {{{account.colors.scheme-7-e}}};
+      --dynamic-color-f: {{{account.colors.scheme-7-f}}};
+      --primary-logo: url('https://files.outfit.io/media_library_items/111799/lendlease_RestrictedUseLogo_ColourScheme07_CMYK.svg');
+    }
+
+    .themeColour--scheme-8 {
+      --dynamic-color-a: {{{account.colors.scheme-8-a}}};
+      --dynamic-color-b: {{{account.colors.scheme-8-b}}};
+      --dynamic-color-c: {{{account.colors.scheme-8-c}}};
+      --dynamic-color-d: {{{account.colors.scheme-8-d}}};
+      --dynamic-color-e: {{{account.colors.scheme-8-e}}};
+      --dynamic-color-f: {{{account.colors.scheme-8-f}}};
+      --primary-logo: url('https://files.outfit.io/media_library_items/111800/lendlease_RestrictedUseLogo_ColourScheme08_CMYK.svg');
+    }
+
+    .themeColour--scheme-9 {
+      --dynamic-color-a: {{{account.colors.scheme-9-a}}};
+      --dynamic-color-b: {{{account.colors.scheme-9-b}}};
+      --dynamic-color-c: {{{account.colors.scheme-9-c}}};
+      --dynamic-color-d: {{{account.colors.scheme-9-d}}};
+      --dynamic-color-e: {{{account.colors.scheme-9-e}}};
+      --dynamic-color-f: {{{account.colors.scheme-9-f}}};
+      --primary-logo: url('https://files.outfit.io/media_library_items/111801/lendlease_RestrictedUseLogo_ColourScheme09_CMYK.svg');
+    }
+
+    body {
+      font-family: "Circular Std";
+      font-size: 1rem;
+      color: var(--black);
+      word-break: break-word;
+    }
+
+    .backgroundImage {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      overflow: hidden;
+    }
+
+    .backgroundImage div {
+      width: auto !important;
+      height: auto !important;
+      right: 0;
+      bottom: 0;
+    }
+
+    /* Helper classes */
+    .u-hide {
+      display: none;
+    }
+
+    /* Helper class for fixing Reposition tool bug */
+    .reposition-fix {
+      position: absolute;
+      overflow: hidden;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+    }
+
+    .reposition-fix div {
+      top: 0 !important;
+      bottom: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+    }
+
+    /* ANY OTHER STYLES THAT NEED MUSTACHE.JS CAPABILITIES */
+    .backgroundColor {
+      background-color: var(--dynamic-{{color-selection}}{{^color-selection}}color-a{{/color-selection}});
+      bottom: calc(3mm + 205pt);
+    }
+    
+    .tinymce_style--dark { color: var(--black); }
+    .tinymce_style--light { color: var(--light); }
+
+    .wrapper {
+      position: absolute;
+      top: 3mm;
+      left: 3mm;
+      bottom: 3mm;
+      right: 3mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .main {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex: 1;
+      width: 100%;
+      padding: 115pt 85pt 0;
+      color: var(--white);
+    }
+    
+    .main .overflow:after {
+      font-size: 0.4em;
+    }
+
+    .heading,
+    .heading h1 {
+      font-family: 'Circular Std Book';
+      font-weight: normal;
+      font-size: 185pt;
+      line-height: 1.2em;
+      letter-spacing: 0;
+    }
+
+    .heading strong {
+      font-family: 'Circular Std';
+      font-weight: bold;
+    }
+
+    .heading sup {
+      font-size: 0.6em;
+      top: -0.8em;
+    }
+
+    .heading sub {
+      font-size: 0.6em;
+      top: auto;
+      bottom: -0.3em;
+    }
+    
+    .heading {
+      max-height: 2.64em;
+    }
+
+    .subheading,
+    .subheading h2 {
+      font-family: 'Circular Std Book';
+      font-weight: normal;
+      font-size: 55pt;
+      line-height: 1.2em;
+      letter-spacing: 0;
+    }
+    
+    .subheading {
+      max-height: 5.04em;
+    }
+
+    .separator {
+      width: 55%;
+      height: 17pt;
+      margin: 113pt 0 45pt;
+      background-color: var(--white);
+    }
+
+    .footer {
+      width: 100%;
+      height: 205pt;
+      padding: 65pt 85pt 20pt;
+      flex: 0 0 205pt;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    
+    .logo-partner {
+      flex: 0 0 295pt;
+      width: 295pt;
+      height: 90pt;
+      {{#partner-logo}}
+      background-image: url({{{partner-logo}}});
+      {{/partner-logo}}
+      background-position: left top;
+      background-size: contain;
+      background-repeat: no-repeat;
+      margin-right: auto;
+    }
+
+    .logo-primary {
+      flex: 0 0 295pt;
+      width: 295pt;
+      height: 90pt;
+      background-image: url('https://files.outfit.io/media_library_items/111795/lendlease_RestrictedUseLogo_ColourScheme_Corp_CMYK.svg');
+      background-position: right top;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    
+    .themeColour--scheme-1 .logo-primary {
+      background-image: url('https://files.outfit.io/media_library_items/111795/lendlease_RestrictedUseLogo_ColourScheme_Corp_CMYK.svg');
+    }
+
+    .themeColour--scheme-2 .logo-primary {
+      background-image: url('https://files.outfit.io/media_library_items/111796/lendlease_RestrictedUseLogo_ColourScheme02_CMYK.svg');
+    }
+
+    .themeColour--scheme-3 .logo-primary {
+      background-image: url('https://files.outfit.io/media_library_items/111793/lendlease_RestrictedUseLogo_ColourScheme03_CMYK.svg');
+    }
+
+    .themeColour--scheme-4 .logo-primary {
+      background-image: url('https://files.outfit.io/media_library_items/111794/lendlease_RestrictedUseLogo_ColourScheme04_CMYK.svg');
+    }
+
+    .themeColour--scheme-5 .logo-primary {
+      background-image: url('https://files.outfit.io/media_library_items/111798/lendlease_RestrictedUseLogo_ColourScheme05_CMYK.svg');
+    }
+
+    .themeColour--scheme-6 .logo-primary {
+      background-image: url('https://files.outfit.io/media_library_items/111797/lendlease_RestrictedUseLogo_ColourScheme06_CMYK.svg');
+    }
+
+    .themeColour--scheme-7 .logo-primary {
+      background-image: url('https://files.outfit.io/media_library_items/111799/lendlease_RestrictedUseLogo_ColourScheme07_CMYK.svg');
+    }
+
+    .themeColour--scheme-8 .logo-primary {
+      background-image: url('https://files.outfit.io/media_library_items/111800/lendlease_RestrictedUseLogo_ColourScheme08_CMYK.svg');
+    }
+
+    .themeColour--scheme-9 .logo-primary {
+      background-image: url('https://files.outfit.io/media_library_items/111801/lendlease_RestrictedUseLogo_ColourScheme09_CMYK.svg');
+    }
+    
+    .logo-primary:first-of-type {
+      background-position: center center;
+    }
+  </style>
+</head>
+
+<body style="background: white" data-crop="{{show-crop}}">
+  <div class="page themeColour--{{theme-color}}{{^theme-color}}scheme-1{{/theme-color}}">
+
+    <div class="bleed">
+
+      <div class="container fit">
+        <div class="backgroundColor fit"></div>
+        <div class="wrapper">
+          <div class="main">
+            {{#LS--heading}}
+            <div class="heading" data-max-height="css">
+              <h1>
+                {{{LS--heading}}}
+              </h1>
+            </div>
+            {{/LS--heading}}
+            {{#LS--subheading}}
+            <div class="separator"></div>
+            <div class="subheading" data-max-height="css">
+              <h2>
+                {{{LS--subheading}}}
+              </h2>
+            </div>
+            {{/LS--subheading}}
+          </div>
+          <div class="footer">
+            {{#partner-logo}}
+            <div class="logo logo-partner"></div>
+            {{/partner-logo}}
+            <div class="logo logo-primary"></div>
+          </div>
+        </div>
+      </div>
+      <!--container fit-->
+
+    </div>
+    <!--bleed-->
+
+  </div>
+  <!--page-->
+
+  <script>
+    window.showCrop = {{show-crop}}{{^show-crop}}true{{/show-crop}};
+  </script>
+  <script src="js/main.js"></script>
+  <script src="js/prefixfree.js"></script>
+  <script src="js/check-export-mode.js"></script>
+  <script src="js/dynamic-inject.js"></script>
+  <script src="js/char-limit.js"></script>
+  <script src="js/max-line-check.js"></script>
+  <script src="js/max-height-check.js"></script>
+  <script src="js/textfit.js"></script>
+  <script src="js/utils.js"></script>
+  <script>
+
+    console.clear();
+
+    // Tracking text changes and firing text restriction functions (mutationObserver)
+    const overflowObserver = new MutationObserver(function (mutations) {
+      mutations.forEach(function (mutation) {
+        maxLineCheck();
+        maxHeightCheck();
+      });
+    });
+
+    const injectObserver = new MutationObserver(function (mutations) {
+      mutations.forEach(function (mutation) {
+        injectDynamicContent();
+      });
+    });
+
+    const injectSources = document.querySelectorAll('[data-target-id]');
+
+    overflowObserver.observe(document.body, {
+      attributes: false,
+      characterData: true,
+      childList: true,
+      subtree: true,
+      attributeOldValue: false,
+      characterDataOldValue: true
+    });
+
+    if (injectSources.length > 0) {
+      injectSources.forEach(src => {
+        injectObserver.observe(src, {
+          attributes: false,
+          characterData: true,
+          childList: true,
+          subtree: true,
+          attributeOldValue: false,
+          characterDataOldValue: true
+        });
+      });
+    }
+
+    // Calling text size restriction functions once the fonts are loaded
+    document.fonts.ready.then(() => {
+      maxLineCheck();
+      maxHeightCheck();
+      injectDynamicContent();
+    });
+
+    checkCrop();
+    checkExport();
+
+    // TextFit function decreases the font of the selected element to make it fit in single line (if needed, uncomment the code bellow)
+    TextFit.fit({
+      selector: '.lockup',
+      alignItems: 'center',
+    });
+
+  </script>
+</body>
+
+</html>
