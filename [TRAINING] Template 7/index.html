@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html data-sign="OS?">
+  <head>
+    <title>Template title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="css/minireset.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/placeholder-controller.css">
+
+    <style>
+         @import url('https://outfit-assets-production.s3.amazonaws.com/fonts/Circular/stylesheet.css');
+      @import url('https://outfit-assets-production.s3.amazonaws.com/fonts/lend-lease/stylesheet.css');
+      /*---- ORDER OF IMPORTANT INPUTS ----*/
+      /*--------{{theme-color}}-----------*/
+      /*--------{{theme-layout}}---------*/
+      /*--------{{subject-text}}--------*/
+      /*--------{{centre-choice}}------*/
+      /*--------{{custom-logo}}-------*/
+
+      :root {
+        --scheme-1-a: {{{account.colors.corporate-a}}};
+        --scheme-1-b: {{{account.colors.corporate-b}}};
+        --scheme-1-c: {{{account.colors.corporate-c}}};
+        --scheme-1-d: {{{account.colors.corporate-d}}};
+        --scheme-1-e: {{{account.colors.corporate-e}}};
+        --scheme-1-f: {{{account.colors.corporate-f}}};
+        --scheme-1-g: {{{account.colors.corporate-g}}};
+
+
+        --scheme-2-a: {{{account.colors.scheme-2-a}}};
+        --scheme-2-b: {{{account.colors.scheme-2-b}}};
+        --scheme-2-c: {{{account.colors.scheme-2-c}}};
+        --scheme-2-d: {{{account.colors.scheme-2-d}}};
+        --scheme-2-e: {{{account.colors.scheme-2-e}}};
+        --scheme-2-f: {{{account.colors.scheme-2-f}}};
+
+
+        --scheme-3-a: {{{account.colors.scheme-3-a}}};	
+        --scheme-3-b: {{{account.colors.scheme-3-b}}};
+        --scheme-3-c: {{{account.colors.scheme-3-c}}};
+        --scheme-3-d: {{{account.colors.scheme-3-d}}};
+        --scheme-3-e: {{{account.colors.scheme-3-e}}};
+        --scheme-3-f: {{{account.colors.scheme-3-f}}};
+
+
+        --scheme-4-a: {{{account.colors.scheme-4-a}}};	
+        --scheme-4-b: {{{account.colors.scheme-4-b}}};
+        --scheme-4-c: {{{account.colors.scheme-4-c}}};
+        --scheme-4-d: {{{account.colors.scheme-4-d}}};
+        --scheme-4-e: {{{account.colors.scheme-4-e}}};
+        --scheme-4-f: {{{account.colors.scheme-4-f}}};
+
+        --scheme-5-a: {{{account.colors.scheme-5-a}}};	
+        --scheme-5-b: {{{account.colors.scheme-5-b}}};
+        --scheme-5-c: {{{account.colors.scheme-5-c}}};
+        --scheme-5-d: {{{account.colors.scheme-5-d}}};
+        --scheme-5-e: {{{account.colors.scheme-5-e}}};
+        --scheme-5-f: {{{account.colors.scheme-5-f}}};
+
+        --scheme-6-a: {{{account.colors.scheme-6-a}}};	
+        --scheme-6-b: {{{account.colors.scheme-6-b}}};
+        --scheme-6-c: {{{account.colors.scheme-6-c}}};
+        --scheme-6-d: {{{account.colors.scheme-6-d}}};
+        --scheme-6-e: {{{account.colors.scheme-6-e}}};
+        --scheme-6-f: {{{account.colors.scheme-6-f}}};
+
+        --scheme-7-a: {{{account.colors.scheme-7-a}}};	
+        --scheme-7-b: {{{account.colors.scheme-7-b}}};
+        --scheme-7-c: {{{account.colors.scheme-7-c}}};
+        --scheme-7-d: {{{account.colors.scheme-7-d}}};
+        --scheme-7-e: {{{account.colors.scheme-7-e}}};
+        --scheme-7-f: {{{account.colors.scheme-7-f}}};
+
+        --scheme-8-a: {{{account.colors.scheme-8-a}}};
+        --scheme-8-b: {{{account.colors.scheme-8-b}}};
+        --scheme-8-c: {{{account.colors.scheme-8-c}}};
+        --scheme-8-d: {{{account.colors.scheme-8-d}}};
+        --scheme-8-e: {{{account.colors.scheme-8-e}}};
+        --scheme-8-f: {{{account.colors.scheme-8-f}}};
+
+
+        --scheme-9-a: {{{account.colors.scheme-9-a}}};	
+        --scheme-9-b: {{{account.colors.scheme-9-b}}};
+        --scheme-9-c: {{{account.colors.scheme-9-c}}};
+        --scheme-9-d: {{{account.colors.scheme-9-d}}};
+        --scheme-9-e: {{{account.colors.scheme-9-e}}};
+        --scheme-9-f: {{{account.colors.scheme-9-f}}};
+
+
+        --dynamic-color-a: {{{account.colors.corporate-a}}};
+        --dynamic-color-b: {{{account.colors.corporate-b}}};
+        --dynamic-color-c: {{{account.colors.corporate-c}}};
+        --dynamic-color-d: {{{account.colors.corporate-d}}};
+        --dynamic-color-e: {{{account.colors.corporate-e}}};
+        --dynamic-color-f: {{{account.colors.corporate-f}}};
+        --dynamic-color-g: {{{account.colors.corporate-g}}};
+
+        --dynamic-gradient-1: linear-gradient(var(--dynamic-color-a), var(--dynamic-color-b));
+        --dynamic-gradient-2: linear-gradient(var(--dynamic-color-c), var(--dynamic-color-d));
+        --dynamic-gradient-3: linear-gradient(var(--dynamic-color-e), var(--dynamic-color-f));
+
+        --secondary-logo: url('https://files.outfit.io/media_library_items/111647/Erina%2520Fair%2520Logo%2520REVERSE.png');
+        --primary-logo : url('https://files.outfit.io/media_library_items/111648/lendlease_RestrictedUseLogo_Mono_REV.png');
+
+        --shape-color: var(--dynamic-color-d);
+      }
+
+      {{{account.snippets.logos}}}
+      
+      [centre-logo="no-centre"] .secondary{
+        display: none;
+      }
+      [centre-logo="no-centre"] .primary{
+        width: 100%;
+        background-position: center;
+      }
+      
+      /*--- custom logo input ---*/ 
+      [centre-logo="custom-logo"] .logo.secondary{
+        background-image: url('{{{custom-logo}}}');
+      }
+
+
+      [theme-color="scheme-1"] {
+        --dynamic-color-a: {{{account.colors.corporate-a}}};
+        --dynamic-color-b: {{{account.colors.corporate-b}}};
+        --dynamic-color-c: {{{account.colors.corporate-c}}};
+        --dynamic-color-d: {{{account.colors.corporate-d}}};
+        --dynamic-color-e: {{{account.colors.corporate-e}}};
+        --dynamic-color-f: {{{account.colors.corporate-f}}};
+        --dynamic-color-g: {{{account.colors.corporate-g}}};
+        --primary-logo : url('https://files.outfit.io/media_library_items/111795/lendlease_RestrictedUseLogo_ColourScheme_Corp_CMYK.svg');
+      }
+
+      [theme-color="scheme-2"] {
+        --dynamic-color-a: {{{account.colors.scheme-2-a}}};
+        --dynamic-color-b: {{{account.colors.scheme-2-b}}};
+        --dynamic-color-c: {{{account.colors.scheme-2-c}}};
+        --dynamic-color-d: {{{account.colors.scheme-2-d}}};
+        --dynamic-color-e: {{{account.colors.scheme-2-e}}};
+        --dynamic-color-f: {{{account.colors.scheme-2-f}}};
+        --primary-logo : url('https://files.outfit.io/media_library_items/111796/lendlease_RestrictedUseLogo_ColourScheme02_CMYK.svg');
+      }
+
+      [theme-color="scheme-3"] {
+        --dynamic-color-a: {{{account.colors.scheme-3-a}}};
+        --dynamic-color-b: {{{account.colors.scheme-3-b}}};
+        --dynamic-color-c: {{{account.colors.scheme-3-c}}};
+        --dynamic-color-d: {{{account.colors.scheme-3-d}}};
+        --dynamic-color-e: {{{account.colors.scheme-3-e}}};
+        --dynamic-color-f: {{{account.colors.scheme-3-f}}};
+        --primary-logo : url('https://files.outfit.io/media_library_items/111793/lendlease_RestrictedUseLogo_ColourScheme03_CMYK.svg');
+      }
+
+      [theme-color="scheme-4"] {
+        --dynamic-color-a: {{{account.colors.scheme-4-a}}};
+        --dynamic-color-b: {{{account.colors.scheme-4-b}}};
+        --dynamic-color-c: {{{account.colors.scheme-4-c}}};
+        --dynamic-color-d: {{{account.colors.scheme-4-d}}};
+        --dynamic-color-e: {{{account.colors.scheme-4-e}}};
+        --dynamic-color-f: {{{account.colors.scheme-4-a}}};
+        --primary-logo : url('https://files.outfit.io/media_library_items/111794/lendlease_RestrictedUseLogo_ColourScheme04_CMYK.svg');
+      }
+
+      [theme-color="scheme-5"] {
+        --dynamic-color-a: {{{account.colors.scheme-5-a}}};
+        --dynamic-color-b: {{{account.colors.scheme-5-b}}};
+        --dynamic-color-c: {{{account.colors.scheme-5-c}}};
+        --dynamic-color-d: {{{account.colors.scheme-5-d}}};
+        --dynamic-color-e: {{{account.colors.scheme-5-e}}};
+        --dynamic-color-f: {{{account.colors.scheme-5-f}}};
+        --primary-logo : url('https://files.outfit.io/media_library_items/111798/lendlease_RestrictedUseLogo_ColourScheme05_CMYK.svg');
+      }
+
+      [theme-color="scheme-6"] {
+        --dynamic-color-a: {{{account.colors.scheme-6-a}}};
+        --dynamic-color-b: {{{account.colors.scheme-6-b}}};
+        --dynamic-color-c: {{{account.colors.scheme-6-c}}};
+        --dynamic-color-d: {{{account.colors.scheme-6-d}}};
+        --dynamic-color-e: {{{account.colors.scheme-6-e}}};
+        --dynamic-color-f: {{{account.colors.scheme-6-f}}};
+        --primary-logo : url('https://files.outfit.io/media_library_items/111797/lendlease_RestrictedUseLogo_ColourScheme06_CMYK.svg');
+      }
+
+      [theme-color="scheme-7"] {
+        --dynamic-color-a: {{{account.colors.scheme-7-a}}};
+        --dynamic-color-b: {{{account.colors.scheme-7-b}}};
+        --dynamic-color-c: {{{account.colors.scheme-7-c}}};
+        --dynamic-color-d: {{{account.colors.scheme-7-d}}};
+        --dynamic-color-e: {{{account.colors.scheme-7-e}}};
+        --dynamic-color-f: {{{account.colors.scheme-7-f}}};
+        --primary-logo : url('https://files.outfit.io/media_library_items/111799/lendlease_RestrictedUseLogo_ColourScheme07_CMYK.svg');
+      }
+
+      [theme-color="scheme-8"] {
+        --dynamic-color-a: {{{account.colors.scheme-8-a}}};
+        --dynamic-color-b: {{{account.colors.scheme-8-b}}};
+        --dynamic-color-c: {{{account.colors.scheme-8-c}}};
+        --dynamic-color-d: {{{account.colors.scheme-8-d}}};
+        --dynamic-color-e: {{{account.colors.scheme-8-e}}};
+        --dynamic-color-f: {{{account.colors.scheme-8-f}}};
+        --primary-logo : url('https://files.outfit.io/media_library_items/111800/lendlease_RestrictedUseLogo_ColourScheme08_CMYK.svg');
+      }
+
+      [theme-color="scheme-9"] {
+        --dynamic-color-a: {{{account.colors.scheme-9-a}}};
+        --dynamic-color-b: {{{account.colors.scheme-9-b}}};
+        --dynamic-color-c: {{{account.colors.scheme-9-c}}};
+        --dynamic-color-d: {{{account.colors.scheme-9-d}}};
+        --dynamic-color-e: {{{account.colors.scheme-9-e}}};
+        --dynamic-color-f: {{{account.colors.scheme-9-f}}};
+        --primary-logo : url('https://files.outfit.io/media_library_items/111801/lendlease_RestrictedUseLogo_ColourScheme09_CMYK.svg');
+      }
+
+      html {
+        font-family: "Circular";
+        font-size: 0.325rem;
+        color: #000;
+        word-break: break-word;
+      }
+
+      .backgroundImage {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        overflow: hidden;
+      }
+
+      .backgroundImage div {
+        width: auto !important;
+        height: auto !important;
+        right: 0;
+        bottom: 0;
+      }      
+      
+      /* Helper classes */
+      .u-hide { display: none; }
+
+      /* Helper class for fixing Reposition tool bug */
+      .reposition-fix {
+        position: absolute;
+        overflow: hidden;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;        
+      }
+      
+      .reposition-fix div {
+        top: 0 !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+      }
+      
+      .container {
+        display: grid;
+        grid-template-rows: 1fr 1fr 0.15fr;
+      }
+      
+      main h4 {
+        font-size: 24px;
+        font-weight: 500;
+        display: inline-block;
+      }
+
+      
+      
+      header {
+        height: 62vh;
+        position: relative;
+        padding-bottom: 0;
+      }
+      .image {
+        margin: 1rem;
+        margin-bottom: 0;
+        width: unset !important;
+        height: unset !important;
+      }
+      header,
+      main,
+      footer {
+        background: var(--dynamic-{{color-selection}});
+        color: white;
+        padding: 1rem 0.9rem;
+      }
+      main {
+        padding-bottom: 0.5rem;
+      }
+      
+      .header {
+        margin-bottom: 0;
+      }
+      main h1 {
+        font-size: 80px;
+        line-height: 0.94;
+        font-weight: 600;
+      }
+      
+      footer {
+        height: 1.5rem;
+        display: flex;
+        align-content: center;
+        padding: 0.25rem 0.9rem;
+      }
+
+      p + p {
+        margin-top: 0.25rem;
+      }
+      h4 + p {
+        margin-top: 0.125rem;
+      }
+      .logo {
+        width: 50%;
+        height: 100%;
+        max-height: 0.5rem;
+        margin-right: 0.125rem;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+      .logo + .logo {
+        margin-left: 0.125rem;
+        margin-right: 0;
+      }
+
+      .secondary {
+        background-image: var(--secondary-logo);
+        background-position: left;
+      }
+
+      .primary {
+        background-image: var(--primary-logo);
+        background-position: right;
+      }
+      
+      .copyContainer {
+        display: flex;
+        font-size: 24px;
+        max-height: 150px;
+        transform: translateY(35px);
+        margin-top: 0.125rem;
+      }
+      
+      .bodyContent1 {
+        display: flex;
+        flex-direction: column;
+        max-height: 190px; 
+        width: calc(50% - 20px);
+        margin-right: 20px;
+      }
+      
+      .bodyContent2{
+        display: flex;
+        flex-direction: column;
+        max-height: 190px;
+        width: calc(50% - 20px);
+        margin-left: 20px;
+      }
+      
+      .call-out {
+        z-index: 3;
+        position: absolute;
+        width: 240px;
+        border-radius: 100%;
+        border: 8px solid white;
+        font-weight: 500;
+        font-size: 34px;
+        height: 240px;
+        display: grid;
+        place-items: center;
+        padding: 0.45rem;
+        text-align: center;
+        margin: 0.5rem;
+        transform: rotate(-25deg);
+      }
+      
+      [layout-choice="border-white"] .container{
+        padding: 1rem;
+      }
+      [layout-choice="border-white"] header{
+        padding: 0;
+        height: 50vh;
+      }
+      [layout-choice="border-white"] main{
+        padding: 0.5rem;
+      }
+      
+      [layout-choice="border-white"] header .image {
+        margin: 0;
+      }
+      
+      [layout-choice="border-white"] footer {
+        padding: 0.25rem;
+      }
+      
+      @media (orientation: landscape) {
+        footer {
+          /*display: none;*/
+        }
+        
+        .copyContainer {
+          flex-direction: column;
+          width: 100%;
+          max-height: 100%;
+        }
+        .bodyContent1 {
+          flex-direction: column;
+          width: 100%;
+          margin: 0;
+        }
+                
+        .bodyContent2 {
+          flex-direction: column;
+          width: 100%;
+          margin: 20px 0 0 0;
+        }
+        
+        .call-out {
+          display: none;
+        }
+        .container {
+          background: var(--dynamic-{{color-selection}});
+          display: grid;
+          grid-template-columns: 0.4fr 1.8fr 1.25fr 0.35fr;
+          grid-template-rows: 2.2fr 64% 0.9fr;
+          grid-template-areas: ". . . ."
+            ". Image Content ."
+            ". . . .";
+        }
+        
+        
+        header {
+          grid-area: Image;
+          margin: 0;
+          height: unset;
+        }
+        
+        header .image {
+          height: unset;
+          margin: 0;
+        }
+        
+        main {
+          padding: 0.75rem;
+          padding-right: 0;
+          padding-left: 1.1rem;
+          padding-bottom: 0;
+        }
+        
+        .header,
+        .header h1 {
+        	font-size: 70px;  
+          	line-height: 1;
+          	overflow: hidden;
+            color: var(--dynamic-{{color-selection}});
+        }
+        
+        main {
+          grid-area: Content;
+        }
+        
+        [layout-choice="border-white"] .container {
+          grid-template-columns: 0.4fr 1.8fr 1.25fr 0.30fr;
+          grid-template-rows: 1.2fr 1.2fr 0.6fr;
+          padding: 0;
+        }
+        [layout-choice="border-white"] header {
+          grid-area: 1 / 1 / 4 / 5;
+          height: 100%;
+        }
+        
+
+        
+        
+        
+        [layout-choice="border-white"] main {
+          z-index: 5;
+          grid-area: 2 / 3 / 3 / 4; 
+          background-color: transparent; 
+          padding: 0.75rem;
+          padding-right: 0;
+          padding-left: 1.1rem;
+          padding-bottom: 0;
+        }
+      } /*end of landscape*/
+      
+      
+      /* ANY OTHER STYLES THAT NEED MUSTACHE.JS CAPABILITIES */
+    </style>
+  </head>
+   <body style="background: white" class="u-placeholder-{{ placeholder-toggle-new }}{{^placeholder-toggle-new}}hide{{/placeholder-toggle-new}}" data-crop="{{show-crop}}" theme-color="{{theme-color}}{{^theme-color}}corporate{{/theme-color}}" centre-logo="{{{centre-choice}}}" shape-color="{{color-selection}}" layout-choice="{{layout-choice}}">
+    <div class="placeholderMaster" data-opacity="{{ placeholder-opacity }}">
+      <div class="placeholderMaster__item" data-bg="{{ placeholder-image-1 }}"></div>
+    </div><!-- end placeholderMaster -->
+     <div class="placeholder"></div>
+    <div class="page">
+
+      <div class="bleed">
+
+        <div class="container fit">
+          <header>
+            {{#call-out-text}}
+            <article class="call-out" >
+              <p data-max-line="3">{{{call-out-text}}}</p>
+            </article>
+            {{/call-out-text}}
+            <article class="image reposition-fix">
+              {{{main-image}}}
+            </article>
+          </header>
+          <main data-max-height="dynamic">
+            <article class="header" data-max-line="3">
+              {{{headline}}}
+            </article>
+            {{#body-content1}}
+           		<div class="copyContainer">
+                  <article class="bodyContent1" data-max-line="6" >
+                    {{{body-content1}}}
+                  </article>
+
+                  <article class="bodyContent2" data-max-line="6" >
+                    {{{body-content2}}}
+                  </article>
+            	</div>
+            {{/body-content1}}  
+          </main>
+          <footer logo-style="{{logo-style}}">
+            <div class="logo secondary"></div>
+            <div class="logo primary"></div> 
+          </footer>
+        </div><!--container fit-->
+
+      </div><!--bleed-->
+
+    </div><!--page-->
+
+
+    <script>
+      window.showCrop = {{show-crop}}{{^show-crop}}true{{/show-crop}};
+    </script>
+    <script src="js/main.js"></script>   
+    <script src="js/prefixfree.js"></script>
+    <script src="js/placeholder-controller.js"></script>
+    <script src="js/char-limit.js"></script>
+    <script src="js/check-export-mode.js"></script>
+    <script src="js/max-line-check.js"></script>
+    <script src="js/max-height-check.js"></script>
+    <script src="js/hide-empty-titles.js"></script>
+    <script src="https://outfit-assets-production.s3-accelerate.amazonaws.com/scripts/textfit.0.0.4.min.js" type="text/javascript"></script>
+    <script>
+
+      // Tracking text changes and firing text restriction functions (mutationObserver)
+      const overflowObserver = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+          maxLineCheck();
+          maxHeightCheck();
+          charLimit();
+        });
+      });
+
+      overflowObserver.observe(document.body, {
+        attributes: false,
+        characterData: true,
+        childList: true,
+        subtree: true,
+        attributeOldValue: false,
+        characterDataOldValue: true
+      });
+
+      // Calling text size restriction functions once the fonts are loaded
+      document.fonts.ready.then(() => {
+        maxLineCheck();
+        maxHeightCheck();
+      });
+
+      placeholderController();
+      checkCrop();
+      checkExport();
+      charLimit();
+
+      // TextFit function decreases the font of the selected element to make it fit in single line (if needed, uncomment the code bellow)
+      TextFit.fit({
+        selector: '.textFit'
+      });
+      
+      function detectSystem() {
+        const isMac = window.navigator.appVersion.includes('Mac');
+    if ( isMac ) document.body.classList.add('is-mac');
+      }
+
+      detectSystem();
+
+    </script>
+
+
+  </body>
+</html>
