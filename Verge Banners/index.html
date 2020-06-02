@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html data-sign="OS?">
+
+<head>
+  <title>Outfit</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" type="text/css" href="./css/minireset.css">
+  <link rel="stylesheet" type="text/css" href="./css/main.css">
+  <link rel="stylesheet" type="text/css" href="./css/placeholder-controller.css">
+
+  <style>
+    @import url('https://outfit-assets-production.s3.amazonaws.com/fonts/Circular/stylesheet.css');
+    @import url('https://outfit-assets-production.s3.amazonaws.com/fonts/lend-lease/stylesheet.css');
+    
+    /* Inputs Order
+    {{#theme-color}}{{/theme-color}}
+    {{#color-selection}}{{/color-selection}}
+    */
+
+    :root {      
+      --white: #ffffff;
+      --grey: #cccccc;
+      --black: #000000;
+
+      --scheme-1-a: {{{account.colors.corporate-a}}};
+      --scheme-1-b: {{{account.colors.corporate-b}}};
+      --scheme-1-c: {{{account.colors.corporate-c}}};
+      --scheme-1-d: {{{account.colors.corporate-d}}};
+      --scheme-1-e: {{{account.colors.corporate-e}}};
+      --scheme-1-f: {{{account.colors.corporate-f}}};
+      --scheme-1-g: {{{account.colors.corporate-g}}};
+
+      --scheme-2-a: {{{account.colors.scheme-2-a}}};
+      --scheme-2-b: {{{account.colors.scheme-2-b}}};
+      --scheme-2-c: {{{account.colors.scheme-2-c}}};
+      --scheme-2-d: {{{account.colors.scheme-2-d}}};
+      --scheme-2-e: {{{account.colors.scheme-2-e}}};
+      --scheme-2-f: {{{account.colors.scheme-2-f}}};
+
+      --scheme-3-a: {{{account.colors.scheme-3-a}}};	
+      --scheme-3-b: {{{account.colors.scheme-3-b}}};
+      --scheme-3-c: {{{account.colors.scheme-3-c}}};
+      --scheme-3-d: {{{account.colors.scheme-3-d}}};
+      --scheme-3-e: {{{account.colors.scheme-3-e}}};
+      --scheme-3-f: {{{account.colors.scheme-3-f}}};
+
+      --scheme-4-a: {{{account.colors.scheme-4-a}}};	
+      --scheme-4-b: {{{account.colors.scheme-4-b}}};
+      --scheme-4-c: {{{account.colors.scheme-4-c}}};
+      --scheme-4-d: {{{account.colors.scheme-4-d}}};
+      --scheme-4-e: {{{account.colors.scheme-4-e}}};
+      --scheme-4-f: {{{account.colors.scheme-4-f}}};
+
+      --scheme-5-a: {{{account.colors.scheme-5-a}}};	
+      --scheme-5-b: {{{account.colors.scheme-5-b}}};
+      --scheme-5-c: {{{account.colors.scheme-5-c}}};
+      --scheme-5-d: {{{account.colors.scheme-5-d}}};
+      --scheme-5-e: {{{account.colors.scheme-5-e}}};
+      --scheme-5-f: {{{account.colors.scheme-5-f}}};
+
+      --scheme-6-a: {{{account.colors.scheme-6-a}}};	
+      --scheme-6-b: {{{account.colors.scheme-6-b}}};
+      --scheme-6-c: {{{account.colors.scheme-6-c}}};
+      --scheme-6-d: {{{account.colors.scheme-6-d}}};
+      --scheme-6-e: {{{account.colors.scheme-6-e}}};
+      --scheme-6-f: {{{account.colors.scheme-6-f}}};
+
+      --scheme-7-a: {{{account.colors.scheme-7-a}}};	
+      --scheme-7-b: {{{account.colors.scheme-7-b}}};
+      --scheme-7-c: {{{account.colors.scheme-7-c}}};
+      --scheme-7-d: {{{account.colors.scheme-7-d}}};
+      --scheme-7-e: {{{account.colors.scheme-7-e}}};
+      --scheme-7-f: {{{account.colors.scheme-7-f}}};
+
+      --scheme-8-a: {{{account.colors.scheme-8-a}}};
+      --scheme-8-b: {{{account.colors.scheme-8-b}}};
+      --scheme-8-c: {{{account.colors.scheme-8-c}}};
+      --scheme-8-d: {{{account.colors.scheme-8-d}}};
+      --scheme-8-e: {{{account.colors.scheme-8-e}}};
+      --scheme-8-f: {{{account.colors.scheme-8-f}}};
+
+      --scheme-9-a: {{{account.colors.scheme-9-a}}};	
+      --scheme-9-b: {{{account.colors.scheme-9-b}}};
+      --scheme-9-c: {{{account.colors.scheme-9-c}}};
+      --scheme-9-d: {{{account.colors.scheme-9-d}}};
+      --scheme-9-e: {{{account.colors.scheme-9-e}}};
+      --scheme-9-f: {{{account.colors.scheme-9-f}}};
+
+      --dynamic-color-a: {{{account.colors.corporate-a}}};
+      --dynamic-color-b: {{{account.colors.corporate-b}}};
+      --dynamic-color-c: {{{account.colors.corporate-c}}};
+      --dynamic-color-d: {{{account.colors.corporate-d}}};
+      --dynamic-color-e: {{{account.colors.corporate-e}}};
+      --dynamic-color-f: {{{account.colors.corporate-f}}};
+      --dynamic-color-g: {{{account.colors.corporate-g}}};
+    }
+    
+    .themeColour--scheme-1 {
+      --dynamic-color-a: {{{account.colors.corporate-a}}};
+      --dynamic-color-b: {{{account.colors.corporate-b}}};
+      --dynamic-color-c: {{{account.colors.corporate-c}}};
+      --dynamic-color-d: {{{account.colors.corporate-d}}};
+      --dynamic-color-e: {{{account.colors.corporate-e}}};
+      --dynamic-color-f: {{{account.colors.corporate-f}}};
+      --dynamic-color-g: {{{account.colors.corporate-g}}};
+      --dynamic-gradient: linear-gradient(to right, var(--dynamic-color-a), var(--dynamic-color-b));
+      --dynamic-text-color: var(--dynamic-color-a);
+      --primary-logo: url('https://files.outfit.io/media_library_items/112167/Asset%25201.svg');
+    }
+
+    .themeColour--scheme-2 {
+      --dynamic-color-a: {{{account.colors.scheme-2-a}}};
+      --dynamic-color-b: {{{account.colors.scheme-2-b}}};
+      --dynamic-color-c: {{{account.colors.scheme-2-c}}};
+      --dynamic-color-d: {{{account.colors.scheme-2-d}}};
+      --dynamic-color-e: {{{account.colors.scheme-2-e}}};
+      --dynamic-color-f: {{{account.colors.scheme-2-f}}};
+      --dynamic-gradient: linear-gradient(to right, var(--dynamic-color-f), var(--dynamic-color-d));
+      --dynamic-text-color: var(--dynamic-color-c);
+      --primary-logo: url('https://files.outfit.io/media_library_items/112164/Asset%25202.svg');
+    }
+
+    .themeColour--scheme-3 {
+      --dynamic-color-a: {{{account.colors.scheme-3-a}}};
+      --dynamic-color-b: {{{account.colors.scheme-3-b}}};
+      --dynamic-color-c: {{{account.colors.scheme-3-c}}};
+      --dynamic-color-d: {{{account.colors.scheme-3-d}}};
+      --dynamic-color-e: {{{account.colors.scheme-3-e}}};
+      --dynamic-color-f: {{{account.colors.scheme-3-f}}};
+      --dynamic-gradient: linear-gradient(to right, var(--dynamic-color-c), var(--dynamic-color-e));
+      --dynamic-text-color: var(--dynamic-color-e);
+      --primary-logo: url('https://files.outfit.io/media_library_items/112166/Asset%25203.svg');
+    }
+
+    .themeColour--scheme-4 {
+      --dynamic-color-a: {{{account.colors.scheme-4-a}}};
+      --dynamic-color-b: {{{account.colors.scheme-4-b}}};
+      --dynamic-color-c: {{{account.colors.scheme-4-c}}};
+      --dynamic-color-d: {{{account.colors.scheme-4-d}}};
+      --dynamic-color-e: {{{account.colors.scheme-4-e}}};
+      --dynamic-color-f: {{{account.colors.scheme-4-a}}};
+      --dynamic-gradient: linear-gradient(to right, var(--dynamic-color-b), var(--dynamic-color-d));
+      --dynamic-text-color: var(--dynamic-color-d);
+      --primary-logo: url('https://files.outfit.io/media_library_items/112165/Asset%25204.svg');
+    }
+
+    .themeColour--scheme-5 {
+      --dynamic-color-a: {{{account.colors.scheme-5-a}}};
+      --dynamic-color-b: {{{account.colors.scheme-5-b}}};
+      --dynamic-color-c: {{{account.colors.scheme-5-c}}};
+      --dynamic-color-d: {{{account.colors.scheme-5-d}}};
+      --dynamic-color-e: {{{account.colors.scheme-5-e}}};
+      --dynamic-color-f: {{{account.colors.scheme-5-f}}};
+      --dynamic-gradient: linear-gradient(to right, var(--dynamic-color-f), var(--dynamic-color-e));
+      --dynamic-text-color: var(--dynamic-color-g);
+      --primary-logo: url('https://files.outfit.io/media_library_items/112163/Asset%25205.svg');
+    }
+
+    .themeColour--scheme-6 {
+      --dynamic-color-a: {{{account.colors.scheme-6-a}}};
+      --dynamic-color-b: {{{account.colors.scheme-6-b}}};
+      --dynamic-color-c: {{{account.colors.scheme-6-c}}};
+      --dynamic-color-d: {{{account.colors.scheme-6-d}}};
+      --dynamic-color-e: {{{account.colors.scheme-6-e}}};
+      --dynamic-color-f: {{{account.colors.scheme-6-f}}};
+      --dynamic-gradient: linear-gradient(to right, var(--dynamic-color-c), var(--dynamic-color-e));
+      --dynamic-text-color: var(--dynamic-color-e);
+      --primary-logo: url('https://files.outfit.io/media_library_items/112168/Asset%25206.svg');
+    }
+
+    .themeColour--scheme-7 {
+      --dynamic-color-a: {{{account.colors.scheme-7-a}}};
+      --dynamic-color-b: {{{account.colors.scheme-7-b}}};
+      --dynamic-color-c: {{{account.colors.scheme-7-c}}};
+      --dynamic-color-d: {{{account.colors.scheme-7-d}}};
+      --dynamic-color-e: {{{account.colors.scheme-7-e}}};
+      --dynamic-color-f: {{{account.colors.scheme-7-f}}};
+      --dynamic-gradient: linear-gradient(to right, var(--dynamic-color-b), var(--dynamic-color-a));
+      --dynamic-text-color: var(--dynamic-color-b);
+      --primary-logo: url('https://files.outfit.io/media_library_items/112162/Asset%25207.svg');
+    }
+
+    .themeColour--scheme-8 {
+      --dynamic-color-a: {{{account.colors.scheme-8-a}}};
+      --dynamic-color-b: {{{account.colors.scheme-8-b}}};
+      --dynamic-color-c: {{{account.colors.scheme-8-c}}};
+      --dynamic-color-d: {{{account.colors.scheme-8-d}}};
+      --dynamic-color-e: {{{account.colors.scheme-8-e}}};
+      --dynamic-color-f: {{{account.colors.scheme-8-f}}};
+      --dynamic-gradient: linear-gradient(to right, var(--dynamic-color-b), var(--dynamic-color-a));
+      --dynamic-text-color: var(--dynamic-color-a);
+      --primary-logo: url('https://files.outfit.io/media_library_items/112161/Asset%25208.svg');
+    }
+
+    .themeColour--scheme-9 {
+      --dynamic-color-a: {{{account.colors.scheme-9-a}}};
+      --dynamic-color-b: {{{account.colors.scheme-9-b}}};
+      --dynamic-color-c: {{{account.colors.scheme-9-c}}};
+      --dynamic-color-d: {{{account.colors.scheme-9-d}}};
+      --dynamic-color-e: {{{account.colors.scheme-9-e}}};
+      --dynamic-color-f: {{{account.colors.scheme-9-f}}};
+      --dynamic-gradient: linear-gradient(to right, var(--dynamic-color-d), var(--dynamic-color-a));
+      --dynamic-text-color: var(--dynamic-color-f);
+      --primary-logo: url('https://files.outfit.io/media_library_items/112169/Asset%25209.svg');
+    }
+
+    body {
+      font-family: "Circular Std";
+      font-size: 1rem;
+      color: var(--black);
+      word-break: break-word;
+    }
+
+    .backgroundImage {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      overflow: hidden;
+    }
+
+    .backgroundImage div {
+      width: auto !important;
+      height: auto !important;
+      right: 0;
+      bottom: 0;
+    }
+
+    /* Helper classes */
+    .u-hide {
+      display: none;
+    }
+
+    /* Helper class for fixing Reposition tool bug */
+    .reposition-fix {
+      position: absolute;
+      overflow: hidden;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+    }
+
+    .reposition-fix div {
+      top: 0 !important;
+      bottom: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+    }
+
+    /* ANY OTHER STYLES THAT NEED MUSTACHE.JS CAPABILITIES */    
+    .backgroundColor {
+      background-color: var(--dynamic-{{color-selection}}{{^color-selection}}color-a{{/color-selection}});
+    }
+
+    .wrapper {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .circle {
+      width: 3524.11pt;
+      height: 3524.11pt;
+      flex: 0 0 auto;
+      background-color: var(--white);
+      border-radius: 50%;
+    }
+
+    .main {
+      position: absolute;
+      top: 3mm;
+      right: 3mm;
+      bottom: 3mm;
+      left: 3mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    
+    .heading, .datetime, .phone {
+      width: 2700pt;
+    }
+
+	.heading,
+    .heading h1 {
+      font-family: 'Pharma Condensed';
+      font-weight: bold;
+      font-size: 500pt;
+      line-height: 1em;      
+      color: var(--dynamic-{{color-selection}}{{^color-selection}}color-a{{/color-selection}});
+    }
+    
+    .heading {
+      margin: 40pt 0; 
+      flex: 0 0 auto;
+      max-height: 600pt;
+    }
+    
+    .heading.overflow:after {
+      font-size: 0.3em;
+    }
+    
+    .heading h1 {
+      text-transform: uppercase;      
+    }
+    
+    .heading h1.overflow:after {
+      font-size: 0.3em;
+    }
+
+    .datetime,
+    .datetime h3 {
+      font-family: 'Pharma Condensed';
+      font-weight: bold;
+      font-size: 230pt;
+      line-height: 1.25em;
+    }
+    
+    .datetime {
+      max-height: 2.75em;
+    }
+
+    .phone,
+    .phone h3 {
+      font-family: 'Pharma Condensed';
+      font-weight: bold;
+      font-size: 230pt;
+      line-height: 1.25em;
+      color: var(--dynamic-{{color-selection}}{{^color-selection}}color-a{{/color-selection}});
+    }
+    
+    .phone {
+      max-height: 1.5em;
+    }
+
+    .logo {
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-image: url('https://files.outfit.io/media_library_items/112167/Asset%25201.svg');
+      margin: 80pt 0 -40pt;
+      width: 593.574pt;
+      height: 425.8pt;
+    }
+    
+    .themeColour--scheme-1 .logo {
+      background-image: url('https://files.outfit.io/media_library_items/112167/Asset%25201.svg');
+    }
+
+    .themeColour--scheme-2 .logo {
+      background-image: url('https://files.outfit.io/media_library_items/112164/Asset%25202.svg');
+    }
+
+    .themeColour--scheme-3 .logo {
+      background-image: url('https://files.outfit.io/media_library_items/112166/Asset%25203.svg');
+    }
+
+    .themeColour--scheme-4 .logo {
+      background-image: url('https://files.outfit.io/media_library_items/112165/Asset%25204.svg');
+    }
+
+    .themeColour--scheme-5 .logo {
+      background-image: url('https://files.outfit.io/media_library_items/112163/Asset%25205.svg');
+    }
+
+    .themeColour--scheme-6 .logo {
+      background-image: url('https://files.outfit.io/media_library_items/112168/Asset%25206.svg');
+    }
+
+    .themeColour--scheme-7 .logo {
+      background-image: url('https://files.outfit.io/media_library_items/112162/Asset%25207.svg');
+    }
+
+    .themeColour--scheme-8 .logo {
+      background-image: url('https://files.outfit.io/media_library_items/112161/Asset%25208.svg');
+    }
+
+    .themeColour--scheme-9 .logo {
+      background-image: url('https://files.outfit.io/media_library_items/112169/Asset%25209.svg');
+    }
+  </style>
+</head>
+
+<body style="background: white" data-crop="{{show-crop}}">
+  <div class="placeholderMaster" data-opacity="{{ placeholder-opacity }}">
+    <div class="placeholderMaster__item" data-bg="{{ placeholder-image }}"></div>
+  </div><!-- end placeholderMaster -->
+  <div class="page themeColour--{{theme-color}}{{^theme-color}}scheme-1{{/theme-color}}">
+
+    <div class="bleed">
+
+      <div class="container fit">
+        <div class="backgroundColor fit"></div>        
+        <div class="wrapper fit">
+          <div class="circle"></div>
+          <div class="main">
+            {{#VB--title}}
+            <div class="heading" data-max-line="1">
+              <h1>{{VB--title}}</h1>
+            </div>
+            {{/VB--title}}
+            {{#VB--datetime}}
+            <div class="datetime u-heading-patch" data-max-height="css">
+              {{{VB--datetime}}}
+            </div>
+            {{/VB--datetime}}
+            {{#VB--phone}}
+            <div class="phone u-heading-patch" data-max-height="css">
+              {{{VB--phone}}}
+            </div>
+            {{/VB--phone}}
+            <div class="logo"></div>            
+          </div>
+        </div>
+      </div>
+      <!--container fit-->
+
+    </div>
+    <!--bleed-->
+
+  </div>
+  <!--page-->
+
+  <script>
+    window.showCrop = {{show-crop}}{{^show-crop}}true{{/show-crop}};
+  </script>
+  <script src="js/main.js"></script>
+  <script src="js/prefixfree.js"></script>
+  <script src="js/placeholder-controller.js"></script>
+  <script src="js/check-export-mode.js"></script>
+  <script src="js/dynamic-inject.js"></script>
+  <script src="js/char-limit.js"></script>
+  <script src="js/max-line-check.js"></script>
+  <script src="js/max-height-check.js"></script>
+  <script src="js/textfit.js"></script>
+  <script src="js/utils.js"></script>
+  <script>
+      {{ #placeholder-toggle }}document.body.classList.add("u-placeholder-{{ placeholder-toggle }}{{^placeholder-toggle}}hide{{/placeholder-toggle}}"); {{ /placeholder-toggle }}
+  </script>
+  <script>
+
+    console.clear();
+
+    // Tracking text changes and firing text restriction functions (mutationObserver)
+    const overflowObserver = new MutationObserver(function (mutations) {
+      mutations.forEach(function (mutation) {
+        maxLineCheck();
+        maxHeightCheck();
+        hideEmptyTitles();
+        headingDataFix();
+      });
+    });
+
+    const injectObserver = new MutationObserver(function (mutations) {
+      mutations.forEach(function (mutation) {
+        injectDynamicContent();
+      });
+    });
+
+    const injectSources = document.querySelectorAll('[data-target-id]');
+
+    overflowObserver.observe(document.body, {
+      attributes: false,
+      characterData: true,
+      childList: true,
+      subtree: true,
+      attributeOldValue: false,
+      characterDataOldValue: true
+    });
+
+    if (injectSources.length > 0) {
+      injectSources.forEach(src => {
+        injectObserver.observe(src, {
+          attributes: false,
+          characterData: true,
+          childList: true,
+          subtree: true,
+          attributeOldValue: false,
+          characterDataOldValue: true
+        });
+      });
+    }
+
+    // Calling text size restriction functions once the fonts are loaded
+    document.fonts.ready.then(() => {
+      maxLineCheck();
+      maxHeightCheck();
+      hideEmptyTitles();
+      headingDataFix();
+      injectDynamicContent();
+    });
+
+    placeholderController();
+    checkCrop();
+    checkExport();
+
+    // TextFit function decreases the font of the selected element to make it fit in single line (if needed, uncomment the code bellow)
+    TextFit.fit({
+      selector: '.lockup',
+      alignItems: 'center',
+    });
+    
+    function headingDataFix() {
+      const page = document.querySelector('.page');
+      const heading = document.querySelector('.heading');
+      
+      if (!heading || heading.innerText.trim().length === 0) {
+       	page.dataset.heading = 'hide'; 
+      } else {
+        page.dataset.heading = 'show';
+      }    
+    }
+
+  </script>
+</body>
+
+</html>
