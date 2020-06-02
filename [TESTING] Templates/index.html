@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html data-sign="OS?">
+  <head>
+    <title>Template title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="css/minireset.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/placeholder-controller.css">
+
+    <style>
+      @import url('https://outfit-assets-production.s3.amazonaws.com/fonts/Circular/stylesheet.css');
+      @import url('https://outfit-assets-production.s3.amazonaws.com/fonts/lend-lease/stylesheet.css');
+      /*---- ORDER OF IMPORTANT INPUTS ----*/
+      /*--------{{theme-color}}-----------*/
+      /*--------{{centre-choice}}------*/
+      /*--------{{custom-logo}}-------*/
+
+      :root {
+        --scheme-1-a: {{{account.colors.corporate-a}}};
+        --scheme-1-b: {{{account.colors.corporate-b}}};
+        --scheme-1-c: {{{account.colors.corporate-c}}};
+        --scheme-1-d: {{{account.colors.corporate-d}}};
+        --scheme-1-e: {{{account.colors.corporate-e}}};
+        --scheme-1-f: {{{account.colors.corporate-f}}};
+        --scheme-1-g: {{{account.colors.corporate-g}}};
+
+
+        --scheme-2-a: {{{account.colors.scheme-2-a}}};
+        --scheme-2-b: {{{account.colors.scheme-2-b}}};
+        --scheme-2-c: {{{account.colors.scheme-2-c}}};
+        --scheme-2-d: {{{account.colors.scheme-2-d}}};
+        --scheme-2-e: {{{account.colors.scheme-2-e}}};
+        --scheme-2-f: {{{account.colors.scheme-2-f}}};
+
+
+        --scheme-3-a: {{{account.colors.scheme-3-a}}};	
+        --scheme-3-b: {{{account.colors.scheme-3-b}}};
+        --scheme-3-c: {{{account.colors.scheme-3-c}}};
+        --scheme-3-d: {{{account.colors.scheme-3-d}}};
+        --scheme-3-e: {{{account.colors.scheme-3-e}}};
+        --scheme-3-f: {{{account.colors.scheme-3-f}}};
+
+
+        --scheme-4-a: {{{account.colors.scheme-4-a}}};	
+        --scheme-4-b: {{{account.colors.scheme-4-b}}};
+        --scheme-4-c: {{{account.colors.scheme-4-c}}};
+        --scheme-4-d: {{{account.colors.scheme-4-d}}};
+        --scheme-4-e: {{{account.colors.scheme-4-e}}};
+        --scheme-4-f: {{{account.colors.scheme-4-f}}};
+
+        --scheme-5-a: {{{account.colors.scheme-5-a}}};	
+        --scheme-5-b: {{{account.colors.scheme-5-b}}};
+        --scheme-5-c: {{{account.colors.scheme-5-c}}};
+        --scheme-5-d: {{{account.colors.scheme-5-d}}};
+        --scheme-5-e: {{{account.colors.scheme-5-e}}};
+        --scheme-5-f: {{{account.colors.scheme-5-f}}};
+
+        --scheme-6-a: {{{account.colors.scheme-6-a}}};	
+        --scheme-6-b: {{{account.colors.scheme-6-b}}};
+        --scheme-6-c: {{{account.colors.scheme-6-c}}};
+        --scheme-6-d: {{{account.colors.scheme-6-d}}};
+        --scheme-6-e: {{{account.colors.scheme-6-e}}};
+        --scheme-6-f: {{{account.colors.scheme-6-f}}};
+
+        --scheme-7-a: {{{account.colors.scheme-7-a}}};	
+        --scheme-7-b: {{{account.colors.scheme-7-b}}};
+        --scheme-7-c: {{{account.colors.scheme-7-c}}};
+        --scheme-7-d: {{{account.colors.scheme-7-d}}};
+        --scheme-7-e: {{{account.colors.scheme-7-e}}};
+        --scheme-7-f: {{{account.colors.scheme-7-f}}};
+
+        --scheme-8-a: {{{account.colors.scheme-8-a}}};
+        --scheme-8-b: {{{account.colors.scheme-8-b}}};
+        --scheme-8-c: {{{account.colors.scheme-8-c}}};
+        --scheme-8-d: {{{account.colors.scheme-8-d}}};
+        --scheme-8-e: {{{account.colors.scheme-8-e}}};
+        --scheme-8-f: {{{account.colors.scheme-8-f}}};
+
+
+        --scheme-9-a: {{{account.colors.scheme-9-a}}};	
+        --scheme-9-b: {{{account.colors.scheme-9-b}}};
+        --scheme-9-c: {{{account.colors.scheme-9-c}}};
+        --scheme-9-d: {{{account.colors.scheme-9-d}}};
+        --scheme-9-e: {{{account.colors.scheme-9-e}}};
+        --scheme-9-f: {{{account.colors.scheme-9-f}}};
+
+
+        --dynamic-color-a: {{{account.colors.corporate-a}}};
+        --dynamic-color-b: {{{account.colors.corporate-b}}};
+        --dynamic-color-c: {{{account.colors.corporate-c}}};
+        --dynamic-color-d: {{{account.colors.corporate-d}}};
+        --dynamic-color-e: {{{account.colors.corporate-e}}};
+        --dynamic-color-f: {{{account.colors.corporate-f}}};
+        --dynamic-color-g: {{{account.colors.corporate-g}}};
+
+        --dynamic-gradient-1: linear-gradient(var(--dynamic-color-a), var(--dynamic-color-b));
+        --dynamic-gradient-2: linear-gradient(var(--dynamic-color-c), var(--dynamic-color-d));
+        --dynamic-gradient-3: linear-gradient(var(--dynamic-color-e), var(--dynamic-color-f));
+
+        --secondary-logo: url('https://files.outfit.io/media_library_items/111647/Erina%2520Fair%2520Logo%2520REVERSE.png');
+        --primary-logo : url('https://files.outfit.io/media_library_items/111648/lendlease_RestrictedUseLogo_Mono_REV.png');
+
+        --shape-color: var(--dynamic-color-d);
+      }
+
+      {{{account.snippets.logos}}}
+      
+
+    
+
+      [theme-color="scheme-1"] {
+        --dynamic-color-a: {{{account.colors.corporate-a}}};
+        --dynamic-color-b: {{{account.colors.corporate-b}}};
+        --dynamic-color-c: {{{account.colors.corporate-c}}};
+        --dynamic-color-d: {{{account.colors.corporate-d}}};
+        --dynamic-color-e: {{{account.colors.corporate-e}}};
+        --dynamic-color-f: {{{account.colors.corporate-f}}};
+        --dynamic-color-g: {{{account.colors.corporate-g}}};
+        --primary-logo : url('https://files.outfit.io/media_library_items/111795/lendlease_RestrictedUseLogo_ColourScheme_Corp_CMYK.svg');
+      }
+
+      [theme-color="scheme-2"] {
+        --dynamic-color-a: {{{account.colors.scheme-2-a}}};
+        --dynamic-color-b: {{{account.colors.scheme-2-b}}};
+        --dynamic-color-c: {{{account.colors.scheme-2-c}}};
+        --dynamic-color-d: {{{account.colors.scheme-2-d}}};
+        --dynamic-color-e: {{{account.colors.scheme-2-e}}};
+        --dynamic-color-f: {{{account.colors.scheme-2-f}}};
+        --primary-logo : url('https://files.outfit.io/media_library_items/111796/lendlease_RestrictedUseLogo_ColourScheme02_CMYK.svg');
+      }
+
+      [theme-color="scheme-3"] {
+        --dynamic-color-a: {{{account.colors.scheme-3-a}}};
+        --dynamic-color-b: {{{account.colors.scheme-3-b}}};
+        --dynamic-color-c: {{{account.colors.scheme-3-c}}};
+        --dynamic-color-d: {{{account.colors.scheme-3-d}}};
+        --dynamic-color-e: {{{account.colors.scheme-3-e}}};
+        --dynamic-color-f: {{{account.colors.scheme-3-f}}};
+        --primary-logo : url('https://files.outfit.io/media_library_items/111793/lendlease_RestrictedUseLogo_ColourScheme03_CMYK.svg');
+      }
+
+      [theme-color="scheme-4"] {
+        --dynamic-color-a: {{{account.colors.scheme-4-a}}};
+        --dynamic-color-b: {{{account.colors.scheme-4-b}}};
+        --dynamic-color-c: {{{account.colors.scheme-4-c}}};
+        --dynamic-color-d: {{{account.colors.scheme-4-d}}};
+        --dynamic-color-e: {{{account.colors.scheme-4-e}}};
+        --dynamic-color-f: {{{account.colors.scheme-4-a}}};
+        --primary-logo : url('https://files.outfit.io/media_library_items/111794/lendlease_RestrictedUseLogo_ColourScheme04_CMYK.svg');
+      }
+
+      [theme-color="scheme-5"] {
+        --dynamic-color-a: {{{account.colors.scheme-5-a}}};
+        --dynamic-color-b: {{{account.colors.scheme-5-b}}};
+        --dynamic-color-c: {{{account.colors.scheme-5-c}}};
+        --dynamic-color-d: {{{account.colors.scheme-5-d}}};
+        --dynamic-color-e: {{{account.colors.scheme-5-e}}};
+        --dynamic-color-f: {{{account.colors.scheme-5-f}}};
+        --primary-logo : url('https://files.outfit.io/media_library_items/111798/lendlease_RestrictedUseLogo_ColourScheme05_CMYK.svg');
+      }
+
+      [theme-color="scheme-6"] {
+        --dynamic-color-a: {{{account.colors.scheme-6-a}}};
+        --dynamic-color-b: {{{account.colors.scheme-6-b}}};
+        --dynamic-color-c: {{{account.colors.scheme-6-c}}};
+        --dynamic-color-d: {{{account.colors.scheme-6-d}}};
+        --dynamic-color-e: {{{account.colors.scheme-6-e}}};
+        --dynamic-color-f: {{{account.colors.scheme-6-f}}};
+        --primary-logo : url('https://files.outfit.io/media_library_items/111797/lendlease_RestrictedUseLogo_ColourScheme06_CMYK.svg');
+      }
+
+      [theme-color="scheme-7"] {
+        --dynamic-color-a: {{{account.colors.scheme-7-a}}};
+        --dynamic-color-b: {{{account.colors.scheme-7-b}}};
+        --dynamic-color-c: {{{account.colors.scheme-7-c}}};
+        --dynamic-color-d: {{{account.colors.scheme-7-d}}};
+        --dynamic-color-e: {{{account.colors.scheme-7-e}}};
+        --dynamic-color-f: {{{account.colors.scheme-7-f}}};
+        --primary-logo : url('https://files.outfit.io/media_library_items/111799/lendlease_RestrictedUseLogo_ColourScheme07_CMYK.svg');
+      }
+
+      [theme-color="scheme-8"] {
+        --dynamic-color-a: {{{account.colors.scheme-8-a}}};
+        --dynamic-color-b: {{{account.colors.scheme-8-b}}};
+        --dynamic-color-c: {{{account.colors.scheme-8-c}}};
+        --dynamic-color-d: {{{account.colors.scheme-8-d}}};
+        --dynamic-color-e: {{{account.colors.scheme-8-e}}};
+        --dynamic-color-f: {{{account.colors.scheme-8-f}}};
+        --primary-logo : url('https://files.outfit.io/media_library_items/111800/lendlease_RestrictedUseLogo_ColourScheme08_CMYK.svg');
+      }
+
+      [theme-color="scheme-9"] {
+        --dynamic-color-a: {{{account.colors.scheme-9-a}}};
+        --dynamic-color-b: {{{account.colors.scheme-9-b}}};
+        --dynamic-color-c: {{{account.colors.scheme-9-c}}};
+        --dynamic-color-d: {{{account.colors.scheme-9-d}}};
+        --dynamic-color-e: {{{account.colors.scheme-9-e}}};
+        --dynamic-color-f: {{{account.colors.scheme-9-f}}};
+        --primary-logo : url('https://files.outfit.io/media_library_items/111801/lendlease_RestrictedUseLogo_ColourScheme09_CMYK.svg');
+      }
+      
+      [data-crop="true"] main {
+        height:  calc(100vh);
+        width: calc(100vw);
+      }
+      
+      p {
+        font-size: 0.35rem;   
+      }
+
+      html {
+        font-family: "Circular";
+        color: #000;
+        word-break: break-word;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4, 
+      h5 {
+        font-weight: 700;
+      }
+
+
+      body {
+        font-size: 0.5em;
+      }
+
+      .intro {
+        grid-area: Intro;
+        color: white;
+        text-align: center;
+      }
+      
+      .intro p {
+        font-size: 0.45rem	;
+      }
+
+      .backgroundImage {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        overflow: hidden;
+      }
+
+      .backgroundImage div {
+        width: auto !important;
+        height: auto !important;
+        right: 0;
+        bottom: 0;
+      }      
+
+      /* Helper classes */
+      .u-hide { display: none; }
+
+      .bleed {
+        padding: 3mm;
+      }
+
+      /* Helper class for fixing Reposition tool bug */
+      .reposition-fix {
+        position: absolute;
+        overflow: hidden;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;        
+      }
+
+      .reposition-fix div {
+        top: 0 !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+      }
+
+      .container {
+        display: grid;
+      }
+      .background-image {
+        grid-column-start: 1;
+        grid-column-end: -1;
+      }
+
+      main {
+        grid-column-start: 1;
+        grid-column-end: -1;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: 0.45fr repeat(7, 1fr) 0.45fr;
+        grid-template-rows: 0.45fr repeat(9, 1fr) 0.45fr;
+        grid-template-areas: 
+          ". . . . . . . . ."
+          ". Intro Intro Intro Intro Intro Intro Intro ."
+          ". . Circle-content Circle-content Circle-content Circle-content Circle-content . ."
+          ". . Circle-content Circle-content Circle-content Circle-content Circle-content . ."
+          ". . Circle-content Circle-content Circle-content Circle-content Circle-content . ."
+          ". . Circle-content Circle-content Circle-content Circle-content Circle-content . ."
+          ". . Circle-content Circle-content Circle-content Circle-content Circle-content . ."
+          ". . Circle-content Circle-content Circle-content Circle-content Circle-content . ."
+          ". . Circle-content Circle-content Circle-content Circle-content Circle-content . ."
+          ". Footer Footer Footer Footer Footer Footer Footer ."
+          ". . . . . . . . ."
+          ;
+        height:100vh;
+        width: 100vw;
+      }
+
+      .intro {
+        grid-area: Intro;
+        font-size: 0.2725rem;
+      }
+
+      .circle-content {
+        grid-area: Circle-content;
+        border-radius: 100%;
+        padding: 1.25rem 0.75rem;
+        display: grid;
+        width: 70vw;
+        height: 70vw;
+        place-self: center center;
+        place-items: center center;
+      }
+
+      .circle-content.start {
+        place-self: start center;
+      }
+      .circle-content.center {
+        place-self: center center;
+      }
+
+      .circle-content.end {
+        place-self: end center;
+      }
+
+      .header {
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-align: center;
+        word-break: break-all;
+      }
+
+      .copy p{
+        font-size: 0.425rem;
+        text-align: center;
+        line-height: 1.18;
+      }
+
+
+
+      footer {
+        grid-area: Footer;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+
+      }
+
+
+      @media (orientation:landscape) {
+        main {
+          grid-template-areas: 
+            ". . . . . . . . ."
+            ". Intro Intro Intro Intro Intro Intro Intro ."
+            ". Circle-content Circle-content Circle-content Circle-content Circle-content Circle-content Circle-content ."
+            ". Circle-content Circle-content Circle-content Circle-content Circle-content Circle-content Circle-content ."
+            ". Circle-content Circle-content Circle-content Circle-content Circle-content Circle-content Circle-content ."
+            ". Circle-content Circle-content Circle-content Circle-content Circle-content Circle-content Circle-content ."
+            ". Circle-content Circle-content Circle-content Circle-content Circle-content Circle-content Circle-content ."
+            ". Circle-content Circle-content Circle-content Circle-content Circle-content Circle-content Circle-content ."
+            ". Circle-content Circle-content Circle-content Circle-content Circle-content Circle-content Circle-content ."
+            ". Footer Footer Footer Footer Footer Footer Footer ."
+            ". . . . . . . . ."
+            ;
+        }
+        .circle-content {
+          place-self: center start;
+          width: 75vh;
+          height: 75vh;
+        }
+
+        .circle-content.start {
+          place-self: center start;
+        }
+
+        .circle-content.center {
+          place-self: center center;
+        }
+
+        .circle-content.end {
+          place-self: center end;
+        }
+      }
+
+      .logo {
+        width: 50%;
+        height: 25%;
+        min-height: 0.5rem;
+        margin-right: 0.125rem;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+      .logo + .logo {
+        margin-left: 0.125rem;
+        margin-right: 0;
+      }
+
+      .secondary {
+        background-image: var(--secondary-logo);
+        background-position: right;
+      }
+
+      .primary {
+        background-image: var(--primary-logo);
+      }
+      
+      .copy-max-line{
+        display:block;
+      }
+
+        .copy-max-height{
+          display:none;
+        }
+
+
+      @media (width: 1200px) and (height: 500px), (width: 820px) and (height: 312px), (width: 1920px) and (height: 1080px), (width: 1400px) and (height: 650px), (width: 640px) and (height: 360px), (width: 275px) and (height: 155px), (width: 1080px) and (height: 1920px), (width: 275px) and (height: 155px) {
+        .intro, footer {
+          display:none;
+        }
+      }
+
+      @media (aspect-ratio: 1/1), (width:520px) and (height: 300px), (width:750px) and (height: 420px), (width: 677px) and (height: 383px), (width: 2785px) and (height: 155px), (width: 275px) and (height: 155px) {
+        main {
+          display:none;
+        }
+      }
+      
+      @media (width: 640px) and (height: 360px) {
+        .copy {
+          display: none;
+        }
+      }
+
+      
+      
+      @media print and (min-width: 1200px) {
+        .circle-content {
+          width: 10rem;
+          height: 10rem;
+          margin: 0 auto;
+        }
+      }
+      
+      
+      @media (min-width: 1200px) and (height: 500px) {
+        .circle-content {
+          width: 88vh;
+          height: 88vh;
+        }
+        .header {
+          font-size: 1.2rem;
+          line-height: 50.95px;
+        }
+        .copy p {
+          font-size: 0.56rem;
+        }
+        .copy-max-line{
+          display:none;
+        }
+      
+        .copy-max-height{
+          display:block;
+        }
+      }
+      @media (width:1280px) and (height: 720px) {
+        .header {
+          font-size: 57px; 
+        }
+        .logo {
+          height: 40%;
+        }
+      }
+      
+      @media (width: 1400px) and (height: 650px) {
+        .circle-content {
+          margin-top: 96px;
+          margin-left: 68px;
+          width: 31vw;
+          height: 31vw;
+        }
+        .header {
+          line-height: 51.88px;
+        }
+        .copy p {
+          font-size: 0.45rem;
+        }
+      }
+      
+      @media (width:820px) and (height: 312px) {
+        .header {
+          font-size: 40px; 
+        }
+      }
+      
+      @media (width:1080px) and (height: 1920px) {
+        main {
+          grid-template-rows: 0.35fr repeat(9, 1fr) 0.35fr;
+        }
+        
+        .circle-content {
+          width: 55vw;
+          height: 55vw;
+        }
+        .header {
+          font-size: 0.7rem;
+          line-height: 72.43px;
+        }
+        .copy p {
+          font-size: 0.3rem;
+          line-height: 1.18;
+          padding-top: 35px;
+        }
+      }
+      
+      @media (width:1080px) and (height: 1510px) {
+        .circle-content {
+          width: 55vw;
+          height: 55vw;
+        }
+        .copy p {
+          font-size: 0.34rem;
+      	}
+      }
+
+      @media (width: 820px) and (height: 312px) {
+        .circle-content {
+          width: 90vh;
+          height: 90vh;
+        }
+      }
+    
+/* A4 page media query */
+      
+        @media (min-width: 200mm) and (min-height: 260mm) and (max-width: 220mm) and (max-height: 310mm) {
+          .page {
+            color: red;
+          }
+          .circle-content {
+            width: 57vw;
+            height: 57vw;
+          }
+          .copy p {
+            font-size: 0.34rem;
+          }
+        }
+      
+      
+      @media (width: 2880px) and (height: 3840px) {
+        .circle-content {
+          width: 54vw;
+          height: 54vw;
+        }
+        .copy p {
+          font-size: 0.34rem;
+        }
+      }
+
+      /* ANY OTHER STYLES THAT NEED MUSTACHE.JS CAPABILITIES */
+    </style>
+  </head>
+  <body style="background: white" class="u-placeholder-{{ placeholder-toggle-new }}{{^placeholder-toggle-new}}hide{{/placeholder-toggle-new}}" data-crop="{{show-crop}}" theme-color="{{theme-color}}" centre-logo="{{{centre-choice}}}" shape-color="{{color-selection}}">
+    <div class="placeholderMaster" data-opacity="{{ placeholder-opacity }}">
+      <div class="placeholderMaster__item" data-bg="{{ placeholder-image-1 }}"></div>
+    </div><!-- end placeholderMaster -->
+    <div class="page">
+
+      <div class="bleed">
+
+        <div class="container fit">
+          <div class="background-image reposition-fix">
+            {{{background-image}}}
+          </div>
+          <main>
+            {{#introduction-headline}}
+            <section class="intro">
+              <p data-char-limit="40">{{{introduction-headline}}}<p>
+            </section>
+            {{/introduction-headline}}
+
+            <section class="circle-content {{circle-position}}" shape-style="{{shape-style}}">
+              <article class="header" data-max-line="3">
+                {{{headline}}}
+              </article>
+              {{#body-copy}}
+              <article class="copy copy-max-line" data-max-line="4">
+                {{{body-copy}}}
+              </article>
+              <article class="copy copy-max-height" data-max-height="75">
+                {{{body-copy}}}
+              </article>
+              {{/body-copy}}
+              {{#cta-text}}<button data-char-limit="15">{{cta-text}}</button>{{/cta-text}}
+            </section>
+            <footer logo-style="{{logo-style}}">
+              <div class="logo secondary"></div>
+              <div class="logo primary"></div> 
+            </footer>
+          </main>
+        </div><!--container fit-->
+
+      </div><!--bleed-->
+
+    </div><!--page-->
+
+
+    <script>
+      window.showCrop = {{show-crop}}{{^show-crop}}true{{/show-crop}};
+    </script>
+    <script src="js/main.js"></script>   
+    <script src="js/prefixfree.js"></script>
+    <script src="js/placeholder-controller.js"></script>
+    <script src="js/char-limit.js"></script>
+    <script src="js/check-export-mode.js"></script>
+    <script src="js/max-line-check.js"></script>
+    <script src="js/max-height-check.js"></script>
+    <script src="js/hide-empty-titles.js"></script>
+    <script src="https://outfit-assets-production.s3-accelerate.amazonaws.com/scripts/textfit.0.0.4.min.js" type="text/javascript"></script>
+    <script>
+
+      // Tracking text changes and firing text restriction functions (mutationObserver)
+      const overflowObserver = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+          maxLineCheck();
+          maxHeightCheck();
+          charLimit();
+        });
+      });
+
+      overflowObserver.observe(document.body, {
+        attributes: false,
+        characterData: true,
+        childList: true,
+        subtree: true,
+        attributeOldValue: false,
+        characterDataOldValue: true
+      });
+
+      // Calling text size restriction functions once the fonts are loaded
+      document.fonts.ready.then(() => {
+        maxLineCheck();
+        maxHeightCheck();
+      });
+
+      placeholderController();
+      checkCrop();
+      checkExport();
+      charLimit();
+
+      // TextFit function decreases the font of the selected element to make it fit in single line (if needed, uncomment the code bellow)
+      TextFit.fit({
+        selector: '.textFit'
+      });
+
+      function detectSystem() {
+        const isMac = window.navigator.appVersion.includes('Mac');
+        if ( isMac ) document.body.classList.add('is-mac');
+      }
+
+      detectSystem();
+    </script>
+    <style>
+      [shape-style="colour-solid"] {
+        background: var(--dynamic-{{color-selection}});
+        color: white;
+      }
+
+      [shape-style="colour-transparent"] {
+        background: var(--dynamic-{{color-selection}});
+        color: white;
+        opacity: 0.8;
+      }
+
+      [shape-style="white-solid"] {
+        background: rgb(255,255,255);
+        color: var(--dynamic-{{color-selection}});
+      }
+
+
+      [shape-style="white-transparent"] {
+        background: rgb(255,255,255);
+        color: var(--dynamic-{{color-selection}});
+        opacity:0.8;
+      }
+
+      [shape-style="outline"] {
+        background: url(https://files.outfit.io/media_library_items/111866/circle-border.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        color: rgb(255,255,255);
+        border-radius: 0;
+        border: 0.125rem solid transparent;
+      }
+      
+      [shape-style="white-solid"] p,
+      [shape-style="white-transparent"] p {
+        color: rgb(0,0,0);
+      }
+
+      button {
+        display: none;
+        background: white;
+        color:  var(--dynamic-{{color-selection}});
+        border-radius: 1rem 1rem 1rem 1rem;
+        border: 0 solid transparent;
+        font-size: 0.5rem;
+        font-weight: 500;
+        width: auto;
+        height: 0.85rem;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+      
+
+      
+      [shape-style="white-solid"] button,
+      [shape-style="white-transparent"] button {
+        background: var(--dynamic-{{color-selection}});
+        color:  white;
+      }
+      
+      
+
+      @media (width: 1200px) and (height: 500px){
+        .intro, footer {
+          display:none;
+        }
+        button {
+          display: block;
+          font-size: 1.1em;
+        }
+      }
+
+      /*--- custom logo input ---*/ 
+      [centre-logo="custom-logo"] .secondary {
+        background-image: url('{{{custom-logo}}}');
+      }
+    </style>
+
+  </body>
+</html>
